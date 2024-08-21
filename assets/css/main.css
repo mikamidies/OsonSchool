@@ -164,10 +164,49 @@ html {
   scroll-behavior: smooth;
   background: #0e0e0e;
   font-family: var(--regular);
-  color: white;
+  color: white !important;
 }
 
 .container {
-  max-width: 1370px;
+  max-width: 1300px;
   margin: 0 auto;
+}
+
+.ant-btn {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent;
+  color: #a4a4a4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0 !important;
+
+  color: #a4a4a4;
+  font-size: 20px;
+  font-weight: 400;
+}
+.ant-btn img {
+  width: 28px;
+}
+.ant-btn i {
+  margin: 0 !important;
+}
+.ant-btn:active,
+.ant-btn:focus,
+.ant-btn:hover {
+  background: transparent !important;
+  color: #a4a4a4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+  color: white !important;
 }
