@@ -4,6 +4,7 @@
     <main>
       <HomeHero />
       <HomeSaturn />
+      <HomeCover />
     </main>
   </div>
 </template>
