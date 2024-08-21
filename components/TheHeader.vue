@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="navbar">
     <div class="container">
       <div class="left">
         <NuxtLink to="/">
@@ -42,7 +42,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async mounted() {
+    function scrollHeader() {
+      const navbar = document.getElementById('navbar')
+      if (this.scrollY >= 50) {
+        navbar.classList.add('scroll')
+      } else {
+        navbar.classList.remove('scroll')
+      }
+    }
+    window.addEventListener('scroll', scrollHeader)
+  },
+}
 </script>
 
 <style scoped>
@@ -51,13 +63,19 @@ export default {}
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
+  transition: 0.4s;
+  padding: 46px 0;
+}
+.wrap.scroll {
+  background: var(--black);
+  padding: 16px 0;
+  border-bottom: 1px solid #a4a4a4;
 }
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 46px 0;
 }
 .links {
   display: flex;

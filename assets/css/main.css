@@ -23,6 +23,8 @@
   --regular: 'Gilroy-Rg';
   --medium: 'Gilroy-Md';
   --bold: 'Gilroy-Bd';
+
+  --black: #0e0e0e;
 }
 
 html,
@@ -162,7 +164,7 @@ body,
 html {
   height: 100%;
   scroll-behavior: smooth;
-  background: #0e0e0e;
+  background: var(--black);
   font-family: var(--regular);
   color: white !important;
 }
