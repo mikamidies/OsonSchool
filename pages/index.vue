@@ -3,6 +3,7 @@
     <TheHeader />
     <main>
       <HomeHero />
+      <HomeSaturn />
     </main>
   </div>
 </template>
