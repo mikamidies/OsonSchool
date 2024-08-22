@@ -27,6 +27,8 @@
   --black: #0e0e0e;
   --blue: #000153;
   --sky: #0080fe;
+  --violet: #390053;
+  --magenta: #8700fe;
 }
 
 html,
@@ -213,4 +215,28 @@ a,
 span,
 li {
   color: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ce1099;
+  border-radius: 2px;
+}
+
+.belt {
+  margin-bottom: 64px;
+}
+.title {
+  font-size: 85px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: var(--bold);
 }

@@ -27,5 +27,17 @@ export default {
     baseURL: '/',
   },
 
-  build: {},
+  build: {
+    babel: {
+      compact: true,
+    },
+    standalone: true,
+    extend(config, ctx) {
+      config.externals = [
+        {
+          encoding: 'encoding',
+        },
+      ]
+    },
+  },
 }

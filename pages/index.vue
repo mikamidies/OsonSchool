@@ -5,6 +5,7 @@
       <HomeHero />
       <HomeSaturn />
       <HomeCover />
+      <HomeWhy />
     </main>
   </div>
 </template>

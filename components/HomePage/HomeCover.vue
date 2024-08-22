@@ -74,15 +74,9 @@ export default {}
 }
 .belt {
   background: var(--blue);
-  margin-bottom: 64px;
 }
 .title {
   color: #0080fe;
-  font-size: 85px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  font-family: var(--bold);
 }
 .title span {
   color: var(--sky) !important;
