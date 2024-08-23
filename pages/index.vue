@@ -6,6 +6,7 @@
       <HomeSaturn />
       <HomeCover />
       <HomeWhy />
+      <HomeTeachers />
     </main>
   </div>
 </template>
