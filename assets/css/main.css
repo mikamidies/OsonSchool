@@ -179,7 +179,9 @@ html {
   max-width: 1300px;
   margin: 0 auto;
 }
-
+.container.big {
+  max-width: 1373px;
+}
 .ant-btn {
   margin: 0 !important;
   padding: 0 !important;

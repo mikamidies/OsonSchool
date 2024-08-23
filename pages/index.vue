@@ -7,6 +7,7 @@
       <HomeCover />
       <HomeWhy />
       <HomeTeachers />
+      <HomePrices />
     </main>
   </div>
 </template>
