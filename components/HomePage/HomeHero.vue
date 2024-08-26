@@ -72,4 +72,9 @@ export default {}
 .content {
   margin-top: -100px;
 }
+@media screen and (max-height: 800px) {
+  .wrap {
+    height: 100vh;
+  }
+}
 </style>

@@ -115,4 +115,9 @@ export default {
   content: '';
   z-index: 1;
 }
+@media screen and (max-height: 800px) {
+  .wrap {
+    padding: 32px 0;
+  }
+}
 </style>

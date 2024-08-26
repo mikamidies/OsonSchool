@@ -10,6 +10,7 @@
       <HomePrices />
       <HomeBonuses />
       <HomeReviews />
+      <HomeFAQ />
     </main>
   </div>
 </template>

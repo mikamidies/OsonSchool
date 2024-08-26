@@ -291,6 +291,7 @@ export default {
   align-items: center;
   gap: 12px;
   display: none;
+  height: 100%;
 }
 .planet.active {
   display: flex;

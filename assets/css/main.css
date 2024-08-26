@@ -244,3 +244,8 @@ li {
   line-height: normal;
   font-family: var(--bold);
 }
+@media screen and (max-width: 1440px) {
+  .container.big {
+    max-width: 1320px;
+  }
+}
