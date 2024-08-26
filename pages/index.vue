@@ -8,6 +8,8 @@
       <HomeWhy />
       <HomeTeachers />
       <HomePrices />
+      <HomeBonuses />
+      <HomeReviews />
     </main>
   </div>
 </template>
