@@ -11,7 +11,9 @@
       <HomeBonuses />
       <HomeReviews />
       <HomeFAQ />
+      <HomeForm />
     </main>
+    <TheFooter />
   </div>
 </template>
 
