@@ -27,42 +27,14 @@
 
       <div class="swiper" ref="whySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <div v-for="item in why" :key="item.id" class="swiper-slide">
             <div class="img">
-              <img src="@/assets/img/why-1.jpg" alt="" />
+              <img :src="item.image" alt="" />
             </div>
             <div class="content">
-              <p class="name">HIGHLY QUALIFIED MENTORS</p>
+              <p class="name">{{ item.title }}</p>
               <p class="sub">
-                Our teachers have exceptional teaching experience, with
-                qualifications such as a minimum IELTS score of 7.5 and SAT
-                scores of 1490 or higher.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="img">
-              <img src="@/assets/img/why-2.jpg" alt="" />
-            </div>
-            <div class="content">
-              <p class="name">HIGHLY QUALIFIED MENTORS</p>
-              <p class="sub">
-                Our teachers have exceptional teaching experience, with
-                qualifications such as a minimum IELTS score of 7.5 and SAT
-                scores of 1490 or higher.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="img">
-              <img src="@/assets/img/why-1.jpg" alt="" />
-            </div>
-            <div class="content">
-              <p class="name">HIGHLY QUALIFIED MENTORS</p>
-              <p class="sub">
-                Our teachers have exceptional teaching experience, with
-                qualifications such as a minimum IELTS score of 7.5 and SAT
-                scores of 1490 or higher.
+                {{ item.subtitle }}
               </p>
             </div>
           </div>
@@ -92,6 +64,8 @@ import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: ['why'],
+
   mounted() {
     new Swiper(this.$refs.whySwiper, {
       slidesPerView: 2,
@@ -153,6 +127,7 @@ export default {
 }
 .swiper {
   max-width: 1075px;
+  min-width: 1075px;
   margin: 0 auto;
   border-radius: 40px;
 }

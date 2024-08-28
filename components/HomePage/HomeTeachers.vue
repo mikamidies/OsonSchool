@@ -10,7 +10,7 @@
     </div>
     <div class="swiper" ref="teacherSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" v-for="item in teachers" :key="item.id">
           <div class="star">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,89 +26,9 @@
             </svg>
           </div>
           <div class="person">
-            <img src="@/assets/img/person-1.png" alt="" />
+            <img :src="item.image" alt="" />
           </div>
-          <p class="name">Mark</p>
-        </div>
-        <div class="swiper-slide">
-          <div class="star">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="198"
-              height="198"
-              viewBox="0 0 198 198"
-              fill="none"
-            >
-              <path
-                d="M99 0L114.374 41.624L148.5 13.2635L141.002 56.9979L184.737 49.5L156.376 83.6261L198 99L156.376 114.374L184.737 148.5L141.002 141.002L148.5 184.737L114.374 156.376L99 198L83.6261 156.376L49.5 184.737L56.9979 141.002L13.2635 148.5L41.624 114.374L0 99L41.624 83.6261L13.2635 49.5L56.9979 56.9979L49.5 13.2635L83.6261 41.624L99 0Z"
-                fill="#0080FE"
-              />
-            </svg>
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-2.webp" alt="" />
-          </div>
-          <p class="name">Johnny</p>
-        </div>
-        <div class="swiper-slide">
-          <div class="star">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="198"
-              height="198"
-              viewBox="0 0 198 198"
-              fill="none"
-            >
-              <path
-                d="M99 0L114.374 41.624L148.5 13.2635L141.002 56.9979L184.737 49.5L156.376 83.6261L198 99L156.376 114.374L184.737 148.5L141.002 141.002L148.5 184.737L114.374 156.376L99 198L83.6261 156.376L49.5 184.737L56.9979 141.002L13.2635 148.5L41.624 114.374L0 99L41.624 83.6261L13.2635 49.5L56.9979 56.9979L49.5 13.2635L83.6261 41.624L99 0Z"
-                fill="#0080FE"
-              />
-            </svg>
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-1.png" alt="" />
-          </div>
-          <p class="name">Mark</p>
-        </div>
-        <div class="swiper-slide">
-          <div class="star">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="198"
-              height="198"
-              viewBox="0 0 198 198"
-              fill="none"
-            >
-              <path
-                d="M99 0L114.374 41.624L148.5 13.2635L141.002 56.9979L184.737 49.5L156.376 83.6261L198 99L156.376 114.374L184.737 148.5L141.002 141.002L148.5 184.737L114.374 156.376L99 198L83.6261 156.376L49.5 184.737L56.9979 141.002L13.2635 148.5L41.624 114.374L0 99L41.624 83.6261L13.2635 49.5L56.9979 56.9979L49.5 13.2635L83.6261 41.624L99 0Z"
-                fill="#0080FE"
-              />
-            </svg>
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-2.webp" alt="" />
-          </div>
-          <p class="name">Johnny</p>
-        </div>
-        <div class="swiper-slide">
-          <div class="star">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="198"
-              height="198"
-              viewBox="0 0 198 198"
-              fill="none"
-            >
-              <path
-                d="M99 0L114.374 41.624L148.5 13.2635L141.002 56.9979L184.737 49.5L156.376 83.6261L198 99L156.376 114.374L184.737 148.5L141.002 141.002L148.5 184.737L114.374 156.376L99 198L83.6261 156.376L49.5 184.737L56.9979 141.002L13.2635 148.5L41.624 114.374L0 99L41.624 83.6261L13.2635 49.5L56.9979 56.9979L49.5 13.2635L83.6261 41.624L99 0Z"
-                fill="#0080FE"
-              />
-            </svg>
-          </div>
-          <div class="person">
-            <img src="@/assets/img/person-1.png" alt="" />
-          </div>
-          <p class="name">Mark</p>
+          <p class="name">{{ item.title }}</p>
         </div>
       </div>
     </div>
@@ -151,6 +71,8 @@ import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: ['teachers'],
+
   mounted() {
     new Swiper(this.$refs.teacherSwiper, {
       slidesPerView: 4,
@@ -190,6 +112,7 @@ export default {
 }
 .person img {
   width: auto;
+  max-width: 356px;
   height: 460px;
   object-fit: contain;
   position: relative;

@@ -29,11 +29,8 @@
 
       <div class="swiper" ref="reviewsSwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="@/assets/img/comment-1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/comment-2.png" alt="" />
+          <div class="swiper-slide" v-for="item in reviews" :key="item.id">
+            <img :src="item.image" alt="" />
           </div>
         </div>
       </div>
@@ -61,6 +58,8 @@ import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: ['reviews'],
+
   mounted() {
     new Swiper(this.$refs.reviewsSwiper, {
       slidesPerView: 1,
@@ -93,7 +92,13 @@ export default {
 .swiper-slide img {
   width: 100%;
   height: 913px;
+  max-width: 720px;
   object-fit: contain;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slider {
   position: relative;

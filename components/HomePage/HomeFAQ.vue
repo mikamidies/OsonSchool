@@ -11,27 +11,15 @@
 
     <div class="container">
       <Accordion>
-        <AccordionItem>
+        <AccordionItem v-for="item in faq" :key="item.id">
           <template slot="accordion-trigger">
             <h4>
               <span class="index"></span>
-              Question
+              {{ item.question }}
             </h4>
           </template>
           <template slot="accordion-content">
-            <div class="html">Answer</div>
-          </template>
-        </AccordionItem>
-
-        <AccordionItem>
-          <template slot="accordion-trigger">
-            <h4>
-              <span class="index"></span>
-              Question
-            </h4>
-          </template>
-          <template slot="accordion-content">
-            <div class="html">Answer</div>
+            <div class="html" v-html="item.answer"></div>
           </template>
         </AccordionItem>
       </Accordion>
@@ -44,6 +32,8 @@ import Accordion from '@/components/Accordion.vue'
 import AccordionItem from '@/components/AccordionItem.vue'
 
 export default {
+  props: ['faq'],
+
   components: {
     Accordion,
     AccordionItem,
