@@ -1,20 +1,16 @@
 <template>
-  <div>
-    <TheHeader />
-    <main>
-      <HomeHero />
-      <HomeSaturn />
-      <HomeCover />
-      <HomeWhy :why="why" />
-      <HomeTeachers :teachers="teachers" />
-      <HomePrices :pricing="pricing" />
-      <HomeBonuses />
-      <HomeReviews :reviews="reviews" />
-      <HomeFAQ :faq="faq" />
-      <HomeForm />
-    </main>
-    <TheFooter />
-  </div>
+  <main>
+    <HomeHero />
+    <HomeSaturn />
+    <HomeCover />
+    <HomeWhy :why="why" />
+    <HomeTeachers :teachers="teachers" />
+    <HomePrices :pricing="pricing" />
+    <HomeBonuses />
+    <HomeReviews :reviews="reviews" />
+    <HomeFAQ :faq="faq" />
+    <HomeForm />
+  </main>
 </template>
 
 <script>
@@ -46,11 +42,5 @@ export default {
       pricing,
     }
   },
-
-  // async mounted() {
-  //   const whyData = await whyApi.getWhy(this.$axios)
-
-  //   this.why = whyData.data.results
-  // },
 }
 </script>
