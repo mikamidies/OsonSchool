@@ -36,7 +36,7 @@ export default {
     const teachers = await teachersApi.getTeachers($axios)
     const reviews = await reviewsApi.getReviews($axios)
     const faq = await faqApi.getFaq($axios)
-    const pricing = await pricingApi.getPrices($$axios)
+    const pricing = await pricingApi.getPrices($axios)
 
     return {
       why,

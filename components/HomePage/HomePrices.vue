@@ -74,7 +74,7 @@
               "
               :class="{ active: handleOne == true }"
             >
-              IELTS
+              {{ pricing[0].title }}
             </button>
             <button
               class="button ni"
@@ -83,7 +83,7 @@
               "
               :class="{ active: handleTwo == true }"
             >
-              General English
+              {{ pricing[1].title }}
             </button>
             <button
               class="button san"
@@ -92,7 +92,7 @@
               "
               :class="{ active: handleThree == true }"
             >
-              SAT
+              {{ pricing[2].title }}
             </button>
           </div>
         </div>
@@ -117,75 +117,33 @@
           </div>
 
           <div class="content one" :class="{ active: handleOne == true }">
-            <div class="item">
-              <h4 class="name">Group</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 4.000.000</p>
+            <div class="item" v-for="item in pricing[0].tarifs" :key="item.id">
+              <h4 class="name" v-if="item.type == 0">Group</h4>
+              <h4 class="name" v-if="item.type == 1">Individual</h4>
+              <div class="list" v-html="item.desc"></div>
+              <p class="price">Price: {{ item.price }}</p>
             </div>
-            <div class="stick"></div>
-            <div class="item">
-              <h4 class="name">Individual</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 7.000.000</p>
-            </div>
+            <div class="stick" v-if="pricing[0].tarifs.length > 1"></div>
           </div>
 
           <div class="content two" :class="{ active: handleTwo == true }">
-            <div class="item">
-              <h4 class="name">Group</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 4.000.000</p>
+            <div class="item" v-for="item in pricing[1].tarifs" :key="item.id">
+              <h4 class="name" v-if="item.type == 0">Group</h4>
+              <h4 class="name" v-if="item.type == 1">Individual</h4>
+              <div class="list" v-html="item.desc"></div>
+              <p class="price">Price: {{ item.price }}</p>
             </div>
-            <div class="stick"></div>
-            <div class="item">
-              <h4 class="name">Individual</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 7.000.000</p>
-            </div>
+            <div class="stick" v-if="pricing[1].tarifs.length > 1"></div>
           </div>
 
           <div class="content three" :class="{ active: handleThree == true }">
-            <div class="item">
-              <h4 class="name">Group</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 4.000.000</p>
+            <div class="item" v-for="item in pricing[2].tarifs" :key="item.id">
+              <h4 class="name" v-if="item.type == 0">Group</h4>
+              <h4 class="name" v-if="item.type == 1">Individual</h4>
+              <div class="list" v-html="item.desc"></div>
+              <p class="price">Price: {{ item.price }}</p>
             </div>
-            <div class="stick"></div>
-            <div class="item">
-              <h4 class="name">Individual</h4>
-              <ul class="list">
-                <li>12 lessons/month through Zoom</li>
-                <li>2-4 students per group</li>
-                <li>Materials by Oson</li>
-                <li>Speaking sessions</li>
-              </ul>
-              <p class="price">Price: 7.000.000</p>
-            </div>
+            <div class="stick" v-if="pricing[2].tarifs.length > 1"></div>
           </div>
         </div>
       </div>
@@ -202,6 +160,8 @@ export default {
       handleThree: false,
     }
   },
+
+  props: ['pricing'],
 }
 </script>
 
@@ -341,8 +301,9 @@ export default {
   flex-direction: column;
   gap: 4px;
   transition: 0.4s;
+  min-height: 184px;
 }
-.list li {
+.list :deep(*) {
   list-style: disc;
   color: #fff;
   font-family: var(--decor);
@@ -350,7 +311,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 30px; /* 120% */
-  margin-left: 8px;
+  background: transparent !important;
 }
 .price {
   padding-top: 40px;
