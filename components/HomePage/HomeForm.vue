@@ -10,9 +10,14 @@
 
         <h4 class="par">Sign up for a trial lesson</h4>
 
-        <form>
-          <input type="text" placeholder="your name" />
-          <input type="text" placeholder="phone number" />
+        <form @submit.prevent="onSubmit">
+          <input type="text" placeholder="your name" v-model="name" required />
+          <input
+            type="number"
+            placeholder="phone number"
+            v-model="phone"
+            required
+          />
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -25,7 +30,40 @@
 </template>
 
 <script>
-export default {}
+import formApi from '@/api/form.js'
+
+export default {
+  data() {
+    return {
+      name: '',
+      phone: '',
+    }
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        name: this.name,
+        phone: this.phone,
+      }
+
+      const res = await formApi.sendForm(formData)
+
+      if (res && res.status === 201) {
+        this.$notification['success']({
+          message: 'Succesfully sent!',
+        })
+      } else {
+        this.$notification['error']({
+          message: 'Error!',
+        })
+      }
+
+      this.name = ''
+      this.phone = ''
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -105,6 +143,7 @@ input {
   line-height: normal;
   background: #d9d9d9;
   padding: 12px;
+  color: black;
 }
 input::placeholder {
   color: #8d8d8d;
