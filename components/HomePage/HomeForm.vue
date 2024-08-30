@@ -8,17 +8,24 @@
       <div class="card">
         <img src="@/assets/img/rect.png" alt="" class="cover" />
 
-        <h4 class="par">Sign up for a trial lesson</h4>
+        <h4 class="par">{{ $store.state.translations['main.signtrial'] }}</h4>
 
         <form @submit.prevent="onSubmit">
-          <input type="text" placeholder="your name" v-model="name" required />
+          <input
+            type="text"
+            :placeholder="$store.state.translations['main.yourname']"
+            v-model="name"
+            required
+          />
           <input
             type="number"
-            placeholder="phone number"
+            :placeholder="$store.state.translations['main.yournumber']"
             v-model="phone"
             required
           />
-          <button type="submit">Submit</button>
+          <button type="submit">
+            {{ $store.state.translations['main.submit'] }}
+          </button>
         </form>
       </div>
 

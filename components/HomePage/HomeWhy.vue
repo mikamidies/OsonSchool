@@ -3,8 +3,8 @@
     <div class="belt">
       <div class="container">
         <h4 class="title">
-          <span> Why </span>
-          Oson?
+          <span> {{ $store.state.translations['main.why'] }} </span>
+          {{ $store.state.translations['main.oson'] }}?
         </h4>
       </div>
     </div>

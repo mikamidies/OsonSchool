@@ -5,8 +5,8 @@
     <div class="belt">
       <div class="container">
         <h4 class="title">
-          <span> We </span>
-          Got your back covered If:
+          <span> {{ $store.state.translations['main.we'] }} </span>
+          {{ $store.state.translations['main.gotyou'] }}
         </h4>
       </div>
     </div>
@@ -17,13 +17,13 @@
             <img src="@/assets/img/figure-1.png" alt="" />
           </div>
           <div class="text">
-            <p>You are solely learning grammar and can't see any progress</p>
+            <p>{{ $store.state.translations['main.gotitem-1'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
           <div class="text">
-            <p>You are solely learning grammar and can't see any progress</p>
+            <p>{{ $store.state.translations['main.gotitem-2'] }}</p>
           </div>
           <div class="figure">
             <img src="@/assets/img/figure-4.png" alt="" />
@@ -35,7 +35,7 @@
             <img src="@/assets/img/figure-3.png" alt="" />
           </div>
           <div class="mid">
-            <p>You are solely learning grammar and can't see any progress</p>
+            <p>{{ $store.state.translations['main.gotitem-3'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
@@ -44,13 +44,13 @@
             <img src="@/assets/img/figure-2.png" alt="" />
           </div>
           <div class="text">
-            <p>You are solely learning grammar and can't see any progress</p>
+            <p>{{ $store.state.translations['main.gotitem-4'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
           <div class="text">
-            <p>You are solely learning grammar and can't see any progress</p>
+            <p>{{ $store.state.translations['main.gotitem-5'] }}</p>
           </div>
           <div class="figure">
             <img src="@/assets/img/figure-5.png" alt="" />

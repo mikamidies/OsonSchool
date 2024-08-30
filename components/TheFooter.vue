@@ -17,7 +17,9 @@
     <div class="foot">
       <div class="container">
         <div class="left">
-          <a href="#"> osonschool@gmail.com </a>
+          <a :href="`mailto:${$store.state.translations['main.about']}`">
+            {{ $store.state.translations['main.email'] }}
+          </a>
         </div>
 
         <div class="mid">
@@ -25,7 +27,9 @@
         </div>
 
         <div class="right">
-          <a href=""> +998 (99) 819 92 99 </a>
+          <a :href="`tel:$store.state.translations['main.about']`">
+            {{ $store.state.translations['main.numero'] }}
+          </a>
         </div>
       </div>
     </div>

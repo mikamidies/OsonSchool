@@ -4,10 +4,7 @@
       <div class="card">
         <img src="@/assets/img/rect.png" alt="" class="cover" />
         <p class="text">
-          Oson, founded in 2023, is an innovative program targeted at improving
-          language acquisition. Our program offers a personalized approach to
-          learning, catering to <br />
-          individual needs of students.
+          {{ $store.state.translations['main.saturn'] }}
         </p>
         <img src="@/assets/img/saturn.png" alt="" class="img" />
       </div>

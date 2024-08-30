@@ -3,8 +3,8 @@
     <div class="belt">
       <div class="container">
         <h4 class="title">
-          <span> The </span>
-          pricing
+          <span> {{ $store.state.translations['main.the'] }} </span>
+          {{ $store.state.translations['main.pricing'] }}
         </h4>
       </div>
     </div>

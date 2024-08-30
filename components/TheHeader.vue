@@ -9,16 +9,24 @@
       <div class="mid">
         <ul class="links">
           <li>
-            <NuxtLink to="/" class="active"> About us </NuxtLink>
+            <NuxtLink to="/" class="active">
+              {{ $store.state.translations['main.about'] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> Teachers </NuxtLink>
+            <NuxtLink to="/">
+              {{ $store.state.translations['main.teachers'] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> Pricing </NuxtLink>
+            <NuxtLink to="/">
+              {{ $store.state.translations['main.pricing'] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> Reviews </NuxtLink>
+            <NuxtLink to="/">
+              {{ $store.state.translations['main.reviews'] }}
+            </NuxtLink>
           </li>
           <li>
             <a-dropdown>
@@ -35,7 +43,7 @@
         </ul>
       </div>
       <div class="right">
-        <button>Sign up for а lesson</button>
+        <button>{{ $store.state.translations['main.signup'] }}</button>
       </div>
     </div>
   </div>

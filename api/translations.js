@@ -1,13 +1,10 @@
 export default {
-  async getTranslations(axios, params) {
+  async getTranslations(axios) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/translations', {
-          ...params,
-        })
-        return res
+        res = await axios.get('/translations', {})
       }
       return res
     } catch (e) {

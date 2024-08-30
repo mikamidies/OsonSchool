@@ -3,10 +3,9 @@
     <div class="container">
       <div class="left">
         <div class="content">
-          <h1 class="title">Learn English online - easy and affordable !</h1>
+          <h1 class="title">{{ $store.state.translations['main.title'] }}</h1>
           <h2 class="sub">
-            «Oson is where Excellence in Education Meets Personalized Learning
-            Journeys»
+            {{ $store.state.translations['main.sub'] }}
           </h2>
         </div>
       </div>

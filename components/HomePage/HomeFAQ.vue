@@ -3,8 +3,8 @@
     <div class="belt">
       <div class="container">
         <h4 class="title">
-          <span> Frequently </span>
-          Asked Questions:
+          <span> {{ $store.state.translations['main.faq'] }} </span>
+          {{ $store.state.translations['main.faq-2'] }}
         </h4>
       </div>
     </div>

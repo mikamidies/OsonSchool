@@ -1,22 +1,31 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title"><span>Extra</span> Bonuses</h4>
+      <h4 class="title">
+        <span>{{ $store.state.translations['main.extra'] }}</span>
+        {{ $store.state.translations['main.bonuses'] }}
+      </h4>
       <div class="items">
         <div class="item">
-          <p class="name">Premium Duolingo Plan</p>
+          <p class="name">
+            {{ $store.state.translations['main.bonusitem-1'] }}
+          </p>
           <div class="img">
             <img src="@/assets/img/bonus-1.png" alt="" />
           </div>
         </div>
         <div class="item">
-          <p class="name">Premium Duolingo Plan</p>
+          <p class="name">
+            {{ $store.state.translations['main.bonusitem-2'] }}
+          </p>
           <div class="img">
             <img src="@/assets/img/bonus-2.png" alt="" />
           </div>
         </div>
         <div class="item">
-          <p class="name">Premium Duolingo Plan</p>
+          <p class="name">
+            {{ $store.state.translations['main.bonusitem-3'] }}
+          </p>
           <div class="img">
             <img src="@/assets/img/bonus-3.png" alt="" />
           </div>
@@ -24,9 +33,9 @@
       </div>
 
       <div class="card">
-        <p class="sup">Message from Oson School</p>
-        <p class="text">Don’t forget to invest in your future</p>
-        <button>Sign up for a lesson</button>
+        <p class="sup">{{ $store.state.translations['main.message'] }}</p>
+        <p class="text">{{ $store.state.translations['main.invest'] }}</p>
+        <button>{{ $store.state.translations['main.signup'] }}</button>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"

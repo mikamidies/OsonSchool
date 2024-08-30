@@ -26,6 +26,8 @@ export default {
         // },
       })
 
+      console.log(translations)
+
       await this.$store.commit('getTranslations', translations.data)
     } catch (error) {
     } finally {
