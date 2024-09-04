@@ -21,10 +21,10 @@ export default {
 
   buildModules: [],
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/i18n'],
 
   axios: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL || 'https://apioson.pythonanywhere.com/api',
   },
 
   build: {

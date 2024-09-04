@@ -43,7 +43,7 @@
         </ul>
       </div>
       <div class="right">
-        <button>{{ $store.state.translations['main.signup'] }}</button>
+        <button>{{ $store.state.translations['main.singup'] }}</button>
       </div>
     </div>
   </div>
