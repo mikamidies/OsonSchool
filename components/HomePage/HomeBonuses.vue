@@ -35,7 +35,7 @@
       <div class="card">
         <p class="sup">{{ $store.state.translations['main.message'] }}</p>
         <p class="text">{{ $store.state.translations['main.invest'] }}</p>
-        <button>{{ $store.state.translations['main.signup'] }}</button>
+        <button>{{ $store.state.translations['main.singup'] }}</button>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -19,16 +19,12 @@ export default {
   },
 
   async mounted() {
-    console.log(this.$i18n)
-
     try {
       const translations = await translationsApi.getTranslations(this.$axios, {
         headers: {
           Language: this.$i18n.locale,
         },
       })
-
-      console.log(translations)
 
       await this.$store.commit('getTranslations', translations.data)
     } catch (error) {

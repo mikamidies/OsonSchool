@@ -1,10 +1,12 @@
 export default {
-  async getWhy(axios) {
+  async getWhy(axios, params) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/reasons')
+        res = await axios.get('/reasons', {
+          ...params,
+        })
       }
 
       return res.data.results

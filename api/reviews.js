@@ -1,10 +1,12 @@
 export default {
-  async getReviews(axios) {
+  async getReviews(axios, params) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/reviews')
+        res = await axios.get('/reviews', {
+          ...params,
+        })
       }
 
       return res.data.results

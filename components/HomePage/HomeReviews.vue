@@ -26,12 +26,12 @@
         </svg>
       </div>
 
-      <img src="@/assets/img/ring.png" alt="" class="ring" />
-
       <div class="swiper" ref="reviewsSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="item in reviews" :key="item.id">
             <img :src="item.image" alt="" />
+
+            <img src="@/assets/img/ring.png" alt="" class="ring" />
           </div>
         </div>
       </div>
@@ -60,6 +60,10 @@ import 'swiper/swiper-bundle.min.css'
 
 export default {
   props: ['reviews'],
+
+  data() {
+    return {}
+  },
 
   mounted() {
     new Swiper(this.$refs.reviewsSwiper, {

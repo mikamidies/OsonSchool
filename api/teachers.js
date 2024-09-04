@@ -1,10 +1,12 @@
 export default {
-  async getTeachers(axios) {
+  async getTeachers(axios, params) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/workers')
+        res = await axios.get('/workers', {
+          ...params,
+        })
       }
 
       return res.data.results

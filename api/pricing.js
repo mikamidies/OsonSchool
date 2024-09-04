@@ -1,10 +1,12 @@
 export default {
-  async getPrices(axios) {
+  async getPrices(axios, params) {
     try {
       let res
 
       if (axios) {
-        res = await axios.get('/tarifs')
+        res = await axios.get('/tarifs', {
+          ...params,
+        })
       }
 
       return res.data.results

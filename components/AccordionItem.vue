@@ -112,17 +112,20 @@ export default {
   line-height: normal;
 }
 
-.accordion__content p,
-.accordion__content ul {
+.accordion__content :deep(p) {
+  padding: 20px 36px 32px 36px;
+  background: rgba(97, 95, 95, 0.25) !important;
+}
+
+.accordion__content :deep(*) {
+  background: transparent !important;
   margin: 0;
-  color: #fff;
-  font-family: var(--decor);
-  font-size: 25px;
+  color: #fff !important;
+  font-family: var(--decor) !important;
+  font-size: 25px !important;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  background: rgba(97, 95, 95, 0.25);
-  padding: 20px 36px 32px 36px;
 }
 
 .accordion-enter-active,
