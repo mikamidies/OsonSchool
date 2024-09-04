@@ -157,4 +157,20 @@ export default {
 .chevron.rotate line {
   stroke: white;
 }
+
+@media screen and (max-width: 1024px) {
+  .accordion__trigger {
+    padding: 12px;
+    font-size: 24px;
+    text-align: left;
+  }
+  .accordion__content :deep(p) {
+    font-size: 20px;
+    padding: 12px;
+  }
+  .accordion__trigger svg {
+    width: 50px;
+    height: 50px;
+  }
+}
 </style>

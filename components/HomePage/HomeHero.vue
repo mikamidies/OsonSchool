@@ -71,6 +71,43 @@ export default {}
 .content {
   margin-top: -100px;
 }
+@media screen and (max-width: 1200px) {
+  .wrap {
+    height: 90vh;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 48px;
+    line-height: 100%;
+  }
+  .right img {
+    position: static;
+    width: 100%;
+    transform: translate(0);
+  }
+  .content {
+    margin: 0;
+    transform: translateY(72px);
+  }
+  .title {
+    margin-bottom: 16px;
+  }
+  .left {
+    height: 65%;
+  }
+  .right {
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sub {
+    font-size: 16px;
+  }
+}
 @media screen and (max-height: 800px) {
   .wrap {
     height: 100vh;

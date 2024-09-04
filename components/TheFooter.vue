@@ -108,4 +108,20 @@ export default {}
   height: 100%;
   z-index: 3;
 }
+@media screen and (max-width: 1024px) {
+  .foot .container {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+  .soc img {
+    width: 64px;
+  }
+  .planet {
+    height: 30%;
+  }
+  .wrap {
+    padding-top: 64px;
+  }
+}
 </style>

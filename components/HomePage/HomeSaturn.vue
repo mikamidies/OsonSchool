@@ -73,4 +73,38 @@ export default {}
   right: 0;
   top: 40%;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 32px 0;
+    overflow: hidden;
+  }
+  .text {
+    font-size: 24px;
+    max-width: 100%;
+  }
+  .card {
+    height: 288px;
+    padding: 24px 32px;
+  }
+  .cover {
+    border-radius: 32px;
+  }
+  .card::after,
+  .card::before {
+    border-radius: 32px;
+  }
+  .card::before {
+    top: 8px;
+    left: -8px;
+  }
+  .card::after {
+    top: -8px;
+    left: 8px;
+  }
+  .img {
+    right: -50px;
+    top: 160px;
+    width: 200px;
+  }
+}
 </style>

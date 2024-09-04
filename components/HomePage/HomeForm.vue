@@ -9,7 +9,7 @@
       <div class="card">
         <img src="@/assets/img/rect.png" alt="" class="cover" />
 
-        <h4 class="par">{{ $store.state.translations['main.signtrial'] }}</h4>
+        <h4 class="par">{{ $store.state.translations['main.singtrial'] }}</h4>
 
         <form @submit.prevent="onSubmit">
           <input
@@ -167,5 +167,54 @@ button {
   background: var(--sky);
   color: white;
   padding: 12px;
+}
+@media screen and (max-width: 1024px) {
+  .head,
+  .tail {
+    display: flex;
+    justify-content: center;
+  }
+  .head img,
+  .tail img {
+    width: 50%;
+  }
+  .card {
+    padding: 24px 32px;
+    height: 280px;
+    min-height: 280px;
+  }
+  .cover {
+    border-radius: 32px;
+  }
+  .card::after,
+  .card::before {
+    border-radius: 32px;
+  }
+  .card::before {
+    top: 8px;
+    left: -8px;
+  }
+  .card::after {
+    top: -8px;
+    left: 8px;
+  }
+  .img {
+    right: -50px;
+    top: 160px;
+    width: 200px;
+  }
+  .par {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  input,
+  button {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  form {
+    gap: 12px;
+  }
 }
 </style>

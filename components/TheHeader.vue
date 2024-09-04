@@ -144,4 +144,16 @@ export default {
     padding: 32px 0;
   }
 }
+@media screen and (max-width: 1200px) {
+  .right,
+  .mid {
+    display: none;
+  }
+  .left img {
+    width: 100px;
+  }
+  .wrap {
+    padding: 24px 0;
+  }
+}
 </style>

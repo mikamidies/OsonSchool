@@ -158,4 +158,29 @@ export default {}
   content: '';
   z-index: 1;
 }
+@media screen and (max-width: 1024px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+  .title {
+    font-size: 48px;
+  }
+  .name {
+    font-size: 24px;
+  }
+  .text {
+    font-size: 24px;
+    text-align: center;
+  }
+  .sup {
+    font-size: 18px;
+  }
+  .card button {
+    padding: 16px 32px;
+  }
+  .card svg {
+    display: none;
+  }
+}
 </style>

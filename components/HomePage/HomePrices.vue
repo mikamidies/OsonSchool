@@ -400,4 +400,58 @@ export default {
 .three.active .item {
   border-color: var(--pink) !important;
 }
+@media screen and (max-width: 1024px) {
+  .card {
+    padding: 16px;
+    border-radius: 32px;
+  }
+  .planet img {
+    height: 72px;
+    width: 72px;
+  }
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .mid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .planet {
+    flex-direction: row;
+  }
+  .tabs button {
+    font-size: 18px;
+    height: 64px;
+  }
+  .content.active {
+    gap: 32px;
+    display: flex !important;
+    flex-direction: column;
+  }
+  .stick {
+    display: none;
+  }
+  .item {
+    padding: 0 16px 16px 16px;
+    border-radius: 24px;
+  }
+  .list {
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .price {
+    padding-top: 16px;
+    font-size: 32px;
+  }
+  .name {
+    font-size: 32px;
+  }
+  .list :deep(*) {
+    font-size: 18px;
+  }
+}
 </style>

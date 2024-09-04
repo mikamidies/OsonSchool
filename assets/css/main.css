@@ -267,3 +267,15 @@ li {
     max-width: 1320px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+  .belt .title {
+    font-size: 25px;
+  }
+  .belt {
+    padding: 12px 0;
+    margin-bottom: 32px;
+  }
+}

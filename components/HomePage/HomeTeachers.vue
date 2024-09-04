@@ -76,7 +76,8 @@ export default {
 
   mounted() {
     new Swiper(this.$refs.teacherSwiper, {
-      slidesPerView: 4,
+      slidesPerView: 1.7,
+      spaceBetween: 32,
       navigation: {
         prevEl: '.teacher__prev',
         nextEl: '.teacher__next',
@@ -86,8 +87,12 @@ export default {
         delay: 3000,
       },
       speed: 1000,
-      // loop: true,
-      spaceBetween: 120,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 120,
+        },
+      },
     })
   },
 }
@@ -175,5 +180,29 @@ export default {
   background: white;
   border-radius: 50%;
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .person img {
+    height: 240px;
+  }
+  .star svg {
+    width: 100px;
+    height: 100px;
+  }
+  .swiper-slide::after {
+    top: 12px;
+    left: -14px;
+  }
+  .name {
+    font-size: 24px;
+    line-height: 150%;
+    padding-top: 16px;
+  }
+  .swiper-slide {
+    padding: 24px;
+  }
+  .swiper {
+    padding-bottom: 16px;
+  }
 }
 </style>

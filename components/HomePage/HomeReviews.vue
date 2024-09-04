@@ -139,4 +139,18 @@ export default {
   right: 10%;
   z-index: 9;
 }
+@media screen and (max-width: 1024px) {
+  .swiper-slide img {
+    height: 440px;
+  }
+  .reviews__prev {
+    left: 5%;
+  }
+  .reviews__next {
+    right: 5%;
+  }
+  .wrap {
+    padding-bottom: 64px;
+  }
+}
 </style>

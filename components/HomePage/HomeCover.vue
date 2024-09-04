@@ -190,4 +190,32 @@ export default {}
 .item:nth-child(7) {
   transform: translateY(-120px);
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 32px 0;
+  }
+  .left {
+    height: 120px;
+    top: 150px;
+  }
+  .right {
+    height: 120px;
+    bottom: 50px;
+  }
+  .items {
+    max-width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .item {
+    justify-content: center;
+    height: 164px;
+  }
+  .item:nth-child(7),
+  .item:nth-child(9) {
+    transform: translateY(0);
+  }
+  .item:nth-child(5) {
+    flex-direction: row-reverse;
+  }
+}
 </style>

@@ -68,7 +68,8 @@ export default {
 
   mounted() {
     new Swiper(this.$refs.whySwiper, {
-      slidesPerView: 2,
+      slidesPerView: 1.2,
+      spaceBetween: 16,
       navigation: {
         prevEl: '.prev',
         nextEl: '.next',
@@ -78,8 +79,12 @@ export default {
         delay: 3000,
       },
       speed: 1000,
-      // loop: true,
-      spaceBetween: 32,
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 32,
+        },
+      },
     })
   },
 }
@@ -146,5 +151,39 @@ export default {
   background: white;
   border-radius: 50%;
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .swiper {
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 16px;
+  }
+  .img img {
+    height: 220px;
+    border-radius: 16px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .name {
+    font-size: 24px;
+    padding: 8px 0;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-size: 16px;
+  }
+  .next {
+    position: absolute;
+    bottom: 32px;
+    left: 60%;
+    transform: translateX(-50%);
+  }
+  .prev {
+    position: absolute;
+    bottom: 32px;
+    left: 40%;
+    transform: translateX(-50%);
+  }
 }
 </style>
