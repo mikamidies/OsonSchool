@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <div class="anchor" id="teachers"></div>
     <div class="belt">
       <div class="container">
         <h4 class="title">

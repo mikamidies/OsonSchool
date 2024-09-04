@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <div class="anchor" id="contacts"></div>
     <div class="container">
       <div class="head">
         <img src="@/assets/img/head.png" alt="" />

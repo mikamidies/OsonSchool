@@ -2,47 +2,56 @@
   <div class="wrap" id="navbar">
     <div class="container">
       <div class="left">
-        <NuxtLink to="/">
+        <button @click="scrollElement('home')">
           <img src="@/assets/img/logo/brand.svg" alt="" />
-        </NuxtLink>
+        </button>
       </div>
       <div class="mid">
         <ul class="links">
           <li>
-            <NuxtLink to="/" class="active">
+            <button @click="scrollElement('about')">
               {{ $store.state.translations['main.about'] }}
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink to="/">
+            <button @click="scrollElement('teachers')">
               {{ $store.state.translations['main.teachers'] }}
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink to="/">
+            <button @click="scrollElement('pricing')">
               {{ $store.state.translations['main.pricing'] }}
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink to="/">
+            <button @click="scrollElement('reviews')">
               {{ $store.state.translations['main.reviews'] }}
-            </NuxtLink>
+            </button>
           </li>
           <li>
             <a-dropdown>
               <a-menu slot="overlay">
-                <a-menu-item key="1"> 1st menu item </a-menu-item>
-                <a-menu-item key="2"> 2nd menu item </a-menu-item>
+                <a-menu-item key="1">
+                  <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
+                </a-menu-item>
+                <a-menu-item key="2">
+                  <NuxtLink :to="switchLocalePath('ru')">Russian</NuxtLink>
+                </a-menu-item>
               </a-menu>
               <a-button style="margin-left: 8px">
-                <img src="@/assets/img/gb.svg" alt="" /> Eng
+                <div v-if="$i18n.locale === 'en'" class="locale">
+                  <img src="@/assets/img/gb.svg" alt="" /> Eng
+                </div>
+                <div v-if="$i18n.locale === 'ru'" class="locale">
+                  <img src="@/assets/img/ru.svg" alt="" /> Ru
+                </div>
                 <a-icon type="down" />
               </a-button>
             </a-dropdown>
           </li>
         </ul>
       </div>
-      <div class="right">
+      <div class="right" @click="scrollElement('contacts')">
         <button>{{ $store.state.translations['main.singup'] }}</button>
       </div>
     </div>
@@ -61,6 +70,13 @@ export default {
       }
     }
     window.addEventListener('scroll', scrollHeader)
+  },
+
+  methods: {
+    scrollElement(id) {
+      const element = document.getElementById(id)
+      element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    },
   },
 }
 </script>
@@ -90,11 +106,11 @@ export default {
   align-items: center;
   gap: 80px;
 }
-.links a {
+.links button {
   font-size: 20px;
   color: #a4a4a4;
 }
-.links a.active {
+.links button.active {
   font-family: var(--bold);
   color: white;
 }

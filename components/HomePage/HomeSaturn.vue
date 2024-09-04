@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <div class="anchor" id="about"></div>
     <div class="container">
       <div class="card">
         <img src="@/assets/img/rect.png" alt="" class="cover" />

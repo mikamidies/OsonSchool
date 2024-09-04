@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" id="home">
     <div class="container">
       <div class="left">
         <div class="content">
