@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'Oson',
+    title: 'Oson School',
     htmlAttrs: {
       lang: 'en',
     },

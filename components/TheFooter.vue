@@ -3,13 +3,17 @@
     <img src="@/assets/img/planet.png" alt="" class="planet" />
 
     <div class="socials">
-      <a href="#" target="_blank" class="soc">
+      <a href="https://t.me/osonschool_admin" target="_blank" class="soc">
         <img src="@/assets/img/logo/soc-1.png" alt="" />
       </a>
-      <a href="#" target="_blank" class="soc">
+      <a href="https://www.youtube.com" target="_blank" class="soc">
         <img src="@/assets/img/logo/soc-2.png" alt="" />
       </a>
-      <a href="#" target="_blank" class="soc">
+      <a
+        href="https://www.instagram.com/osonschool/"
+        target="_blank"
+        class="soc"
+      >
         <img src="@/assets/img/logo/soc-3.png" alt="" />
       </a>
     </div>
