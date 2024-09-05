@@ -165,8 +165,10 @@ export default {
     text-align: left;
   }
   .accordion__content :deep(p) {
-    font-size: 20px;
     padding: 12px;
+  }
+  .accordion__content :deep(*) {
+    font-size: 18px !important;
   }
   .accordion__trigger svg {
     width: 50px;

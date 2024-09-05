@@ -54,6 +54,35 @@
       <div class="right" @click="scrollElement('contacts')">
         <button>{{ $store.state.translations['main.singup'] }}</button>
       </div>
+
+      <div class="menu">
+        <ul class="links">
+          <li>
+            <button @click="scrollElement('about')">
+              {{ $store.state.translations['main.about'] }}
+            </button>
+          </li>
+          <li>
+            <button @click="scrollElement('teachers')">
+              {{ $store.state.translations['main.teachers'] }}
+            </button>
+          </li>
+          <li>
+            <button @click="scrollElement('pricing')">
+              {{ $store.state.translations['main.pricing'] }}
+            </button>
+          </li>
+          <li>
+            <button @click="scrollElement('reviews')">
+              {{ $store.state.translations['main.reviews'] }}
+            </button>
+          </li>
+        </ul>
+        <div class="lang">
+          <button></button>
+          <button></button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

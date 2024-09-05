@@ -35,7 +35,9 @@
       <div class="card">
         <p class="sup">{{ $store.state.translations['main.message'] }}</p>
         <p class="text">{{ $store.state.translations['main.invest'] }}</p>
-        <button>{{ $store.state.translations['main.singup'] }}</button>
+        <button @click="scrollElement('contacts')">
+          {{ $store.state.translations['main.singup'] }}
+        </button>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +63,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    scrollElement(id) {
+      const element = document.getElementById(id)
+      element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -164,7 +173,7 @@ export default {}
     gap: 32px;
   }
   .title {
-    font-size: 48px;
+    font-size: 32px;
   }
   .name {
     font-size: 24px;
