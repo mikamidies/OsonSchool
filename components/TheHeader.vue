@@ -51,11 +51,21 @@
           </li>
         </ul>
       </div>
-      <div class="right" @click="scrollElement('contacts')">
-        <button>{{ $store.state.translations['main.singup'] }}</button>
+      <div class="right">
+        <button @click="scrollElement('contacts')">
+          {{ $store.state.translations['main.singup'] }}
+        </button>
       </div>
 
-      <div class="menu">
+      <div
+        class="burger"
+        @click="menuHandle = !menuHandle"
+        :class="{ x: menuHandle }"
+      >
+        <div class="stick"></div>
+      </div>
+
+      <div class="menu" :class="{ show: menuHandle == true }">
         <ul class="links">
           <li>
             <button @click="scrollElement('about')">
@@ -79,8 +89,27 @@
           </li>
         </ul>
         <div class="lang">
-          <button></button>
-          <button></button>
+          <NuxtLink
+            :to="switchLocalePath('en')"
+            @click="scrollElement('home')"
+            :class="{ active: $i18n.locale === 'en' }"
+            class="language"
+          >
+            <img src="@/assets/img/gb.svg" alt="" /> Eng
+          </NuxtLink>
+          <NuxtLink
+            :to="switchLocalePath('ru')"
+            @click="scrollElement('home')"
+            :class="{ active: $i18n.locale === 'ru' }"
+            class="language"
+          >
+            <img src="@/assets/img/ru.svg" alt="" /> Ru
+          </NuxtLink>
+        </div>
+        <div class="right">
+          <button @click="scrollElement('contacts')">
+            {{ $store.state.translations['main.singup'] }}
+          </button>
         </div>
       </div>
     </div>
@@ -89,6 +118,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      menuHandle: false,
+    }
+  },
+
   async mounted() {
     function scrollHeader() {
       const navbar = document.getElementById('navbar')
@@ -105,6 +140,8 @@ export default {
     scrollElement(id) {
       const element = document.getElementById(id)
       element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+
+      this.menuHandle = false
     },
   },
 }
@@ -168,6 +205,10 @@ export default {
   content: '';
   z-index: 1;
 }
+.menu,
+.burger {
+  display: none;
+}
 @media screen and (max-height: 800px) {
   .wrap {
     padding: 32px 0;
@@ -183,6 +224,104 @@ export default {
   }
   .wrap {
     padding: 24px 0;
+  }
+  .burger {
+    display: flex;
+  }
+  .stick {
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: relative;
+    transition: 0.3s;
+  }
+  .stick::before {
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: '';
+    transition: 0.3s;
+  }
+  .stick::after {
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    content: '';
+    transition: 0.3s;
+  }
+  .x .stick {
+    transform: rotate(45deg);
+  }
+  .x .stick::after {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  .x .stick::before {
+    opacity: 0;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    transform: translateX(-100%);
+    transition: 0.4s;
+  }
+  .menu.show {
+    transform: translateX(0);
+  }
+  .left,
+  .burger {
+    position: relative;
+    z-index: 2;
+  }
+  .menu .links {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .menu .right {
+    display: flex !important;
+  }
+  .menu .right button {
+    font-size: 18px;
+    max-width: 288px;
+  }
+  .menu .links button {
+    color: white;
+    font-size: 26px;
+  }
+  .menu .lang {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .menu .language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.5;
+  }
+  .menu .language.active {
+    opacity: 1;
+  }
+  .menu .language img {
+    width: 32px;
+    height: 24px;
+    object-fit: cover;
   }
 }
 </style>
