@@ -10,14 +10,44 @@
         </div>
       </div>
       <div class="right">
-        <img src="@/assets/img/hero.png" alt="" />
+        <img
+          class="home__button-wrapper"
+          @mousemove="onMouseMove"
+          @mouseleave="onMouseLeave"
+          src="@/assets/img/hero.png"
+          alt=""
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    onMouseMove(e) {
+      const bounds = e.currentTarget.getBoundingClientRect()
+
+      const centerX = bounds.left + bounds.width / 2
+      const centerY = bounds.top + bounds.height / 2
+
+      const x = e.clientX - centerX
+      const y = e.clientY - centerY
+
+      this.$gsap.to('.home__button-wrapper', 1, {
+        x: x * 0.1,
+        y: y * 0.1,
+      })
+    },
+
+    onMouseLeave() {
+      this.$gsap.to('.home__button-wrapper', 1, {
+        x: 0,
+        y: 0,
+      })
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -55,12 +85,13 @@ export default {}
 .right {
   position: relative;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .right img {
-  position: absolute;
-  top: 60%;
-  left: 40%;
-  transform: translate(-50%, -50%);
+  width: 630px;
+  object-fit: contain;
 }
 .left {
   height: 100%;

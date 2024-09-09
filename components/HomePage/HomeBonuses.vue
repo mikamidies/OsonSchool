@@ -160,12 +160,16 @@ export default {
   background: #0080fe;
   mix-blend-mode: screen;
   filter: blur(12.5px);
-
+  transition: 0.4s;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   content: '';
   z-index: 1;
+}
+.card:hover button::after {
+  opacity: 1;
 }
 @media screen and (max-width: 1024px) {
   .items {

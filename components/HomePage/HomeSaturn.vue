@@ -20,7 +20,7 @@ export default {}
 <style scoped>
 .card {
   position: relative;
-  height: 388px;
+  min-height: 388px;
   display: flex;
   padding: 40px 72px;
 }

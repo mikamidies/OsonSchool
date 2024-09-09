@@ -170,11 +170,17 @@ export default {
 .links {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
 }
 .links button {
   font-size: 20px;
   color: #a4a4a4;
+  transition: 0.4s;
+  padding: 20px;
+}
+.links button:hover {
+  font-weight: 700;
+  color: white;
 }
 .links button.active {
   font-family: var(--bold);
@@ -198,12 +204,16 @@ export default {
   background: #0080fe;
   mix-blend-mode: screen;
   filter: blur(12.5px);
-
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   content: '';
   z-index: 1;
+  transition: 0.4s;
+}
+.right:hover button:after {
+  opacity: 1;
 }
 .menu,
 .burger {

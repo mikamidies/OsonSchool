@@ -21,7 +21,7 @@ export default {
 
   buildModules: [],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/i18n', 'nuxt-gsap-module'],
 
   axios: {
     baseURL: process.env.BASE_URL || 'https://apioson.pythonanywhere.com/api',

@@ -30,11 +30,11 @@
           </div>
         </div>
         <div class="hollow"></div>
-        <div class="item">
+        <div class="item heigher">
           <div class="figure">
             <img src="@/assets/img/figure-3.png" alt="" />
           </div>
-          <div class="mid">
+          <div class="text">
             <p>{{ $store.state.translations['main.gotitem-3'] }}</p>
           </div>
         </div>
@@ -189,6 +189,9 @@ export default {}
 .item:nth-child(9),
 .item:nth-child(7) {
   transform: translateY(-120px);
+}
+.heigher {
+  height: auto;
 }
 @media screen and (max-width: 1024px) {
   .wrap {
