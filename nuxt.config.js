@@ -15,7 +15,7 @@ export default {
 
   css: ['ant-design-vue/dist/antd.css', '@/assets/css/main.css'],
 
-  plugins: ['@/plugins/antd-ui'],
+  plugins: ['@/plugins/antd-ui', '@/plugins/aos.client.js'],
 
   components: true,
 

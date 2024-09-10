@@ -10,13 +10,7 @@
         </div>
       </div>
       <div class="right">
-        <img
-          class="home__button-wrapper"
-          @mousemove="onMouseMove"
-          @mouseleave="onMouseLeave"
-          src="@/assets/img/hero.png"
-          alt=""
-        />
+        <img class="star" src="@/assets/img/hero.png" alt="" />
       </div>
     </div>
   </div>
@@ -25,27 +19,23 @@
 <script>
 export default {
   methods: {
-    onMouseMove(e) {
-      const bounds = e.currentTarget.getBoundingClientRect()
-
-      const centerX = bounds.left + bounds.width / 2
-      const centerY = bounds.top + bounds.height / 2
-
-      const x = e.clientX - centerX
-      const y = e.clientY - centerY
-
-      this.$gsap.to('.home__button-wrapper', 1, {
-        x: x * 0.1,
-        y: y * 0.1,
-      })
-    },
-
-    onMouseLeave() {
-      this.$gsap.to('.home__button-wrapper', 1, {
-        x: 0,
-        y: 0,
-      })
-    },
+    // onMouseMove(e) {
+    //   const bounds = e.currentTarget.getBoundingClientRect()
+    //   const centerX = bounds.left + bounds.width / 2
+    //   const centerY = bounds.top + bounds.height / 2
+    //   const x = e.clientX - centerX
+    //   const y = e.clientY - centerY
+    //   this.$gsap.to('.home__button-wrapper', 1, {
+    //     x: x * 0.1,
+    //     y: y * 0.1,
+    //   })
+    // },
+    // onMouseLeave() {
+    //   this.$gsap.to('.home__button-wrapper', 1, {
+    //     x: 0,
+    //     y: 0,
+    //   })
+    // },
   },
 }
 </script>
@@ -101,6 +91,20 @@ export default {
 }
 .content {
   margin-top: -100px;
+}
+.star {
+  animation: levitate 5s ease-out 1s infinite;
+}
+@keyframes levitate {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(-5%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 @media screen and (max-width: 1200px) {
   .wrap {

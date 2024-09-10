@@ -1,13 +1,15 @@
 <template>
-  <div class="wrap">
-    <div class="anchor" id="about"></div>
-    <div class="container">
-      <div class="card">
-        <img src="@/assets/img/rect.png" alt="" class="cover" />
-        <p class="text">
-          {{ $store.state.translations['main.saturn'] }}
-        </p>
-        <img src="@/assets/img/saturn.png" alt="" class="img" />
+  <div class="wrapper">
+    <div class="wrap">
+      <div class="anchor" id="about"></div>
+      <div class="container">
+        <div class="card">
+          <img src="@/assets/img/rect.png" alt="" class="cover" />
+          <p class="text">
+            {{ $store.state.translations['main.saturn'] }}
+          </p>
+          <img src="@/assets/img/saturn.png" alt="" class="img" />
+        </div>
       </div>
     </div>
   </div>
@@ -18,6 +20,10 @@ export default {}
 </script>
 
 <style scoped>
+.wrapper {
+  padding: 40px 0 200px 0;
+  overflow: hidden;
+}
 .card {
   position: relative;
   min-height: 388px;
@@ -72,6 +78,18 @@ export default {}
   position: absolute;
   right: 0;
   top: 40%;
+  animation: levitate 5s ease-out 1s infinite;
+}
+@keyframes levitate {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(5%, 5%) rotate(25deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 @media screen and (max-width: 1024px) {
   .wrap {

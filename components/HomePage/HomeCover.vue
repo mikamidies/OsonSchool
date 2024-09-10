@@ -10,13 +10,13 @@
         </h4>
       </div>
     </div>
-    <div class="container">
+    <div class="container cont">
       <div class="items">
         <div class="item">
-          <div class="figure">
+          <div class="figure firstFigure">
             <img src="@/assets/img/figure-1.png" alt="" />
           </div>
-          <div class="text">
+          <div class="text firstText">
             <p>{{ $store.state.translations['main.gotitem-1'] }}</p>
           </div>
         </div>
@@ -64,12 +64,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {},
+}
 </script>
 
 <style scoped>
 .wrap {
-  padding-top: 200px;
   position: relative;
 }
 .belt {
