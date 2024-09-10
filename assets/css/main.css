@@ -295,5 +295,9 @@ input[type='number'] {
   }
 }
 html {
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+  cursor: url(../img/logo/cursor-1.png) 10 20, auto;
+}
+a:hover,
+button:hover {
+  cursor: url(../img/logo/cursor-2.png) 10 20, auto;
 }

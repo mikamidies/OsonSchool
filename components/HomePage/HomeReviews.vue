@@ -139,6 +139,10 @@ export default {
   right: 10%;
   z-index: 9;
 }
+.reviews__next:hover,
+.reviews__prev:hover {
+  cursor: url(@/assets/img/logo/cursor-2.png) 10 20, auto;
+}
 @media screen and (max-width: 1024px) {
   .swiper-slide img {
     height: 440px;

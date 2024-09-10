@@ -181,6 +181,10 @@ export default {
   border-radius: 50%;
   cursor: pointer;
 }
+.teacher__prev:hover,
+.teacher__next:hover {
+  cursor: url(@/assets/img/logo/cursor-2.png) 10 20, auto;
+}
 @media screen and (max-width: 1024px) {
   .person img {
     height: 240px;

@@ -157,6 +157,9 @@ export default {
 .chevron.rotate line {
   stroke: white;
 }
+.accordion__item:hover {
+  cursor: url(@/assets/img/logo/cursor-2.png) 10 20, auto;
+}
 
 @media screen and (max-width: 1024px) {
   .accordion__trigger {

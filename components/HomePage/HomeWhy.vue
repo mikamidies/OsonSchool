@@ -152,6 +152,10 @@ export default {
   border-radius: 50%;
   cursor: pointer;
 }
+.prev:hover,
+.next:hover {
+  cursor: url(@/assets/img/logo/cursor-2.png) 10 20, auto;
+}
 @media screen and (max-width: 1024px) {
   .swiper {
     max-width: 100%;
