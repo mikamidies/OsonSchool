@@ -301,3 +301,7 @@ a:hover,
 button:hover {
   cursor: url(../img/logo/cursor-2.png) 10 20, auto;
 }
+.ring {
+  width: 600px;
+  height: 500px;
+}

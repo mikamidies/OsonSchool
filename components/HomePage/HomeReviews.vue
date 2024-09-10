@@ -26,12 +26,13 @@
         </svg>
       </div>
 
+      <EldenRing class="ring" />
+      <img src="@/assets/img/mockup.png" alt="" class="phone" />
+
       <div class="swiper" ref="reviewsSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="item in reviews" :key="item.id">
             <img :src="item.image" alt="" />
-
-            <img src="@/assets/img/ring.png" alt="" class="ring" />
           </div>
         </div>
       </div>
@@ -57,6 +58,7 @@
 <script>
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
+import EldenRing from '../EldenRing.vue'
 
 export default {
   props: ['reviews'],
@@ -68,6 +70,7 @@ export default {
   mounted() {
     new Swiper(this.$refs.reviewsSwiper, {
       slidesPerView: 1,
+      loop: true,
       navigation: {
         prevEl: '.reviews__prev',
         nextEl: '.reviews__next',
@@ -77,7 +80,7 @@ export default {
         delay: 3000,
       },
       speed: 1000,
-      spaceBetween: 32,
+      spaceBetween: 0,
     })
   },
 }
@@ -96,9 +99,9 @@ export default {
 }
 .swiper-slide img {
   width: 100%;
-  height: 913px;
-  max-width: 720px;
-  object-fit: contain;
+  height: 720px;
+  max-width: 340px;
+  object-fit: cover;
 }
 .swiper-slide {
   display: flex;
@@ -108,6 +111,20 @@ export default {
 .slider {
   position: relative;
 }
+.swiper {
+  border-radius: 64px;
+  width: 340px;
+}
+.phone {
+  width: 368px;
+  height: 732px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
 .ring {
   position: absolute;
   top: 50%;
@@ -115,6 +132,9 @@ export default {
   transform: translate(-50%, -50%);
   z-index: -1;
   pointer-events: none;
+}
+.ring :deep(svg) {
+  width: 600px;
 }
 .reviews__next,
 .reviews__prev {
@@ -145,7 +165,8 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .swiper-slide img {
-    height: 440px;
+    height: 380px;
+    border-radius: 20px;
   }
   .reviews__prev {
     left: 5%;
@@ -153,8 +174,19 @@ export default {
   .reviews__next {
     right: 5%;
   }
+  .swiper {
+    width: 180px;
+    border-radius: 20px;
+  }
   .wrap {
     padding-bottom: 64px;
+  }
+  .phone {
+    width: 200px;
+    height: 480px;
+  }
+  .ring {
+    width: 80%;
   }
 }
 </style>
