@@ -197,6 +197,7 @@ export default {
 @media screen and (max-width: 1024px) {
   .wrap {
     padding: 32px 0;
+    overflow-x: hidden;
   }
   .left {
     height: 120px;
@@ -212,14 +213,31 @@ export default {
   }
   .item {
     justify-content: center;
-    height: 164px;
+    height: 190px;
   }
   .item:nth-child(7),
   .item:nth-child(9) {
     transform: translateY(0);
   }
   .item:nth-child(5) {
+    flex-direction: row;
+  }
+  .item:nth-child(7) {
     flex-direction: row-reverse;
+  }
+  .item:nth-child(9) {
+    flex-direction: row-reverse;
+  }
+  .item:nth-child(1) .figure,
+  .item:nth-child(7) .figure {
+    transform: translateX(0px);
+  }
+  .item:nth-child(3) .figure,
+  .item:nth-child(9) .figure {
+    transform: translateX(0px);
+  }
+  .item:nth-child(5) .figure {
+    transform: translateY(0px);
   }
 }
 </style>

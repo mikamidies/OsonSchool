@@ -92,6 +92,9 @@ export default {}
   }
 }
 @media screen and (max-width: 1024px) {
+  .wrapper {
+    padding-bottom: 0;
+  }
   .wrap {
     padding: 32px 0;
     overflow: hidden;
