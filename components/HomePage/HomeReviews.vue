@@ -11,7 +11,7 @@
     </div>
 
     <div class="slider">
-      <div class="reviews__prev">
+      <div class="reviews__prev" @click="decrease">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -26,8 +26,11 @@
         </svg>
       </div>
 
-      <EldenRing class="ring" />
       <img src="@/assets/img/mockup.png" alt="" class="phone" />
+      <EldenRing
+        class="ring"
+        :class="{ purple: count == 1, blue: count == 2 }"
+      />
 
       <div class="swiper" ref="reviewsSwiper">
         <div class="swiper-wrapper">
@@ -37,7 +40,7 @@
         </div>
       </div>
 
-      <div class="reviews__next">
+      <div class="reviews__next" @click="increase">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -58,13 +61,14 @@
 <script>
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
-import EldenRing from '../EldenRing.vue'
 
 export default {
   props: ['reviews'],
 
   data() {
-    return {}
+    return {
+      count: 0,
+    }
   },
 
   mounted() {
@@ -82,6 +86,26 @@ export default {
       speed: 1000,
       spaceBetween: 0,
     })
+  },
+
+  methods: {
+    increase() {
+      if (this.count < 2) {
+        this.count++
+      } else {
+        this.count--
+        console.log(this.count)
+      }
+    },
+
+    decrease() {
+      if (this.count > 0) {
+        this.count--
+      } else {
+        this.count++
+        console.log(this.count)
+      }
+    },
   },
 }
 </script>

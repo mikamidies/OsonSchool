@@ -305,3 +305,12 @@ button:hover {
   width: 600px;
   height: 500px;
 }
+.ring path {
+  transition: 0.3s;
+}
+.ring.purple path {
+  fill: var(--magenta) !important;
+}
+.ring.blue path {
+  fill: var(--sky) !important;
+}
