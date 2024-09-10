@@ -13,46 +13,46 @@
     <div class="container cont">
       <div class="items">
         <div class="item">
-          <div class="figure firstFigure">
+          <div class="figure oneFigure">
             <img src="@/assets/img/figure-1.png" alt="" />
           </div>
-          <div class="text firstText">
+          <div class="text oneText">
             <p>{{ $store.state.translations['main.gotitem-1'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
-          <div class="text">
+          <div class="text twoText">
             <p>{{ $store.state.translations['main.gotitem-2'] }}</p>
           </div>
-          <div class="figure">
+          <div class="figure twoFigure">
             <img src="@/assets/img/figure-4.png" alt="" />
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item heigher">
-          <div class="figure">
+          <div class="figure threeFigure">
             <img src="@/assets/img/figure-3.png" alt="" />
           </div>
-          <div class="text">
+          <div class="text threeText">
             <p>{{ $store.state.translations['main.gotitem-3'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
-          <div class="figure">
+          <div class="figure fourFigure">
             <img src="@/assets/img/figure-2.png" alt="" />
           </div>
-          <div class="text">
+          <div class="text foutText">
             <p>{{ $store.state.translations['main.gotitem-4'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
-          <div class="text">
+          <div class="text fiveText">
             <p>{{ $store.state.translations['main.gotitem-5'] }}</p>
           </div>
-          <div class="figure">
+          <div class="figure fiveFigure">
             <img src="@/assets/img/figure-5.png" alt="" />
           </div>
         </div>
@@ -64,8 +64,40 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
-  mounted() {},
+  mounted() {
+    let figure = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.cont',
+        start: '-50% center',
+        end: '200% center',
+        markers: false,
+        scrub: true,
+      },
+    })
+
+    figure.to('.oneFigure', {
+      y: -56,
+    })
+    figure.to('.twoFigure', {
+      y: -56,
+    })
+    figure.to('.threeFigure', {
+      y: -56,
+    })
+    figure.to('.fourFigure', {
+      y: -56,
+    })
+    figure.to('.fiveFigure', {
+      y: -56,
+    })
+  },
 }
 </script>
 
