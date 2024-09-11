@@ -16,13 +16,13 @@
           <div class="figure oneFigure">
             <img src="@/assets/img/figure-1.png" alt="" />
           </div>
-          <div class="text oneText">
+          <div class="text texter oneText">
             <p>{{ $store.state.translations['main.gotitem-1'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
-          <div class="text twoText">
+          <div class="text texter twoText">
             <p>{{ $store.state.translations['main.gotitem-2'] }}</p>
           </div>
           <div class="figure twoFigure">
@@ -34,7 +34,7 @@
           <div class="figure threeFigure">
             <img src="@/assets/img/figure-3.png" alt="" />
           </div>
-          <div class="text threeText">
+          <div class="text texter threeText">
             <p>{{ $store.state.translations['main.gotitem-3'] }}</p>
           </div>
         </div>
@@ -43,13 +43,13 @@
           <div class="figure fourFigure">
             <img src="@/assets/img/figure-2.png" alt="" />
           </div>
-          <div class="text foutText">
+          <div class="text texter foutText">
             <p>{{ $store.state.translations['main.gotitem-4'] }}</p>
           </div>
         </div>
         <div class="hollow"></div>
         <div class="item">
-          <div class="text fiveText">
+          <div class="text texter fiveText">
             <p>{{ $store.state.translations['main.gotitem-5'] }}</p>
           </div>
           <div class="figure fiveFigure">
@@ -67,36 +67,35 @@
 import { gsap } from 'gsap'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Timeline } from 'gsap/gsap-core'
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(Timeline)
 
 export default {
   mounted() {
     let figure = gsap.timeline({
       scrollTrigger: {
         trigger: '.cont',
-        start: '-50% center',
-        end: '200% center',
+        start: 'top 80%',
+        end: 'top 10%',
         markers: false,
-        scrub: true,
+        scrub: 1,
       },
     })
 
-    figure.to('.oneFigure', {
-      y: -56,
+    let text = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.cont',
+        start: 'top 80%',
+        end: 'top 10%',
+        markers: false,
+        scrub: 1,
+      },
     })
-    figure.to('.twoFigure', {
-      y: -56,
-    })
-    figure.to('.threeFigure', {
-      y: -56,
-    })
-    figure.to('.fourFigure', {
-      y: -56,
-    })
-    figure.to('.fiveFigure', {
-      y: -56,
-    })
+
+    figure.to('.figure', { duration: 100, y: -64 })
+    text.to('.texter', { duration: 200, y: 12 })
   },
 }
 </script>
@@ -203,6 +202,9 @@ export default {
 }
 .item:nth-child(5) {
   flex-direction: column-reverse;
+}
+.item:nth-child(5) .text {
+  z-index: 10;
 }
 .item:nth-child(5) .figure {
   transform: translateY(-28px);

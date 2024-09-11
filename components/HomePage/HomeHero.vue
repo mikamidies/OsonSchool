@@ -17,25 +17,17 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
-  methods: {
-    // onMouseMove(e) {
-    //   const bounds = e.currentTarget.getBoundingClientRect()
-    //   const centerX = bounds.left + bounds.width / 2
-    //   const centerY = bounds.top + bounds.height / 2
-    //   const x = e.clientX - centerX
-    //   const y = e.clientY - centerY
-    //   this.$gsap.to('.home__button-wrapper', 1, {
-    //     x: x * 0.1,
-    //     y: y * 0.1,
-    //   })
-    // },
-    // onMouseLeave() {
-    //   this.$gsap.to('.home__button-wrapper', 1, {
-    //     x: 0,
-    //     y: 0,
-    //   })
-    // },
+  mounted() {
+    gsap.to('.title', {
+      // x: 300,
+    })
   },
 }
 </script>
@@ -100,7 +92,7 @@ export default {
     transform: translate(0%, 0%);
   }
   50% {
-    transform: translate(-5%, -5%);
+    transform: translate(-10%, -10%);
   }
   100% {
     transform: translate(0, 0);
