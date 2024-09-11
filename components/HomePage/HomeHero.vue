@@ -128,7 +128,6 @@ export default {
   }
   .content {
     margin: 0;
-    transform: translateY(72px);
   }
   .title {
     margin-bottom: 16px;
@@ -137,13 +136,24 @@ export default {
     height: 65%;
   }
   .right {
-    height: 35%;
+    height: 28%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .sub {
     font-size: 16px;
+  }
+  @keyframes levitate {
+    0% {
+      transform: translate(0%, 0%);
+    }
+    50% {
+      transform: translate(-5%, -5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
   }
 }
 @media screen and (max-height: 800px) {

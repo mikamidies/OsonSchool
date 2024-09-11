@@ -217,5 +217,8 @@ button {
   form {
     gap: 12px;
   }
+  .container {
+    margin: 0;
+  }
 }
 </style>

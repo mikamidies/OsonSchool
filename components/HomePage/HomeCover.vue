@@ -236,10 +236,12 @@ export default {
   .left {
     height: 120px;
     top: 150px;
+    display: none;
   }
   .right {
     height: 120px;
     bottom: 50px;
+    display: none;
   }
   .items {
     max-width: 100%;

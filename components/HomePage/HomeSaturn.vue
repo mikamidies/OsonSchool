@@ -96,7 +96,7 @@ export default {}
     padding-bottom: 0;
   }
   .wrap {
-    padding: 32px 0;
+    padding: 32px 0 100px 0;
     overflow: hidden;
   }
   .text {
@@ -104,7 +104,7 @@ export default {}
     max-width: 100%;
   }
   .card {
-    height: 288px;
+    min-height: 288px;
     padding: 24px 32px;
   }
   .cover {
@@ -123,8 +123,8 @@ export default {}
     left: 8px;
   }
   .img {
-    right: -50px;
-    top: 160px;
+    right: 00px;
+    top: 90%;
     width: 200px;
   }
 }

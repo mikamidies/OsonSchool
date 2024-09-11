@@ -179,13 +179,13 @@ export default {
   }
   .next {
     position: absolute;
-    bottom: 32px;
+    bottom: -64px;
     left: 60%;
     transform: translateX(-50%);
   }
   .prev {
     position: absolute;
-    bottom: 32px;
+    bottom: -64px;
     left: 40%;
     transform: translateX(-50%);
   }
