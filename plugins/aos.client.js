@@ -1,9 +1,9 @@
-// import AOS from 'aos'
+import AOS from 'aos'
 
-// import 'aos/dist/aos.css'
+import 'aos/dist/aos.css'
 
-// export default ({ app }, inject) => {
-//   app.AOS = new AOS.init({
-//     once: false,
-//   })
-// }
+export default ({ app }, inject) => {
+  app.AOS = new AOS.init({
+    once: false,
+  })
+}

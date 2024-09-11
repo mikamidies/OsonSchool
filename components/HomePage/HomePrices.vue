@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="container big">
+    <div class="container big" data-aos="fade-up" data-aos-duration="1200">
       <div class="card">
         <div class="top">
           <div class="stars">

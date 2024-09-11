@@ -28,7 +28,7 @@
               {{ $store.state.translations['main.reviews'] }}
             </button>
           </li>
-          <li>
+          <li class="onatili">
             <a-dropdown>
               <a-menu slot="overlay">
                 <a-menu-item key="1">
@@ -148,6 +148,14 @@ export default {
 </script>
 
 <style scoped>
+.onatili {
+  padding: 32px;
+  cursor: pointer !important;
+  margin-inline: -32px;
+}
+.onatili button {
+  cursor: pointer !important;
+}
 .wrap {
   position: fixed;
   top: 0;

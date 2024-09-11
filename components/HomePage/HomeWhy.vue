@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
       <div class="prev">
         <svg
           xmlns="http://www.w3.org/2000/svg"

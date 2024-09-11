@@ -1,12 +1,12 @@
 <template>
   <div class="wrap">
     <div class="anchor upper" id="contacts"></div>
-    <div class="container">
-      <div class="head">
+    <div class="container" id="form">
+      <div class="head" data-aos="fade-up" data-aos-duration="1200">
         <img src="@/assets/img/head.png" alt="" />
       </div>
 
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-duration="900">
         <img src="@/assets/img/rect.png" alt="" class="cover" />
 
         <h4 class="par">{{ $store.state.translations['main.singtrial'] }}</h4>
@@ -30,7 +30,7 @@
         </form>
       </div>
 
-      <div class="tail">
+      <div class="tail" data-aos="fade-up" data-aos-duration="700">
         <img src="@/assets/img/tail.png" alt="" />
       </div>
     </div>
@@ -82,6 +82,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  margin: 100px auto 0 auto;
 }
 .card {
   position: relative;

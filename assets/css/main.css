@@ -248,6 +248,7 @@ li {
 .ant-dropdown-menu-submenu-title,
 .ant-dropdown-menu-item a {
   color: var(--black) !important;
+  cursor: pointer !important;
 }
 .wrap {
   position: relative;
@@ -260,10 +261,14 @@ li {
 .anchor.upper {
   top: 0px;
 }
+.ant-dropdown {
+  cursor: pointer !important;
+}
 .ant-btn .locale {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer !important;
 }
 
 input::-webkit-outer-spin-button,

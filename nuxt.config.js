@@ -13,6 +13,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  loading: '@/components/loading.vue',
+
   css: ['ant-design-vue/dist/antd.css', '@/assets/css/main.css'],
 
   plugins: ['@/plugins/antd-ui', '@/plugins/aos.client.js'],

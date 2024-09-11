@@ -1,6 +1,12 @@
 <template>
   <div class="wrap">
-    <img src="@/assets/img/planet.png" alt="" class="planet" />
+    <img
+      src="@/assets/img/planet.png"
+      alt=""
+      class="planet"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+    />
 
     <div class="socials">
       <a href="https://t.me/osonschool_admin" target="_blank" class="soc">
@@ -48,6 +54,7 @@ export default {}
 .wrap {
   padding-top: 300px;
   position: relative;
+  overflow: hidden;
 }
 .planet {
   position: absolute;

@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
       <Accordion>
         <AccordionItem v-for="item in faq" :key="item.id">
           <template slot="accordion-trigger">

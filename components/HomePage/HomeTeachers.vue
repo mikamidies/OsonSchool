@@ -9,7 +9,12 @@
         </h4>
       </div>
     </div>
-    <div class="swiper" ref="teacherSwiper">
+    <div
+      class="swiper"
+      ref="teacherSwiper"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+    >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="item in teachers" :key="item.id">
           <div class="star">

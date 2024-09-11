@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="anchor" id="reviews"></div>
     <div class="belt">
-      <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-duration="1200">
         <h4 class="title">
           <span> {{ $store.state.translations['main.our'] }} </span>
           {{ $store.state.translations['main.reviews'] }}

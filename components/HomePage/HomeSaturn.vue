@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="anchor" id="about"></div>
       <div class="container">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="1200">
           <img src="@/assets/img/rect.png" alt="" class="cover" />
           <p class="text">
             {{ $store.state.translations['main.saturn'] }}

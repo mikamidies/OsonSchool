@@ -1,6 +1,6 @@
 <template>
   <div class="wrap" id="home">
-    <div class="container">
+    <div class="container conte">
       <div class="left">
         <div class="content">
           <h1 class="title">{{ $store.state.translations['main.title'] }}</h1>
@@ -25,8 +25,18 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default {
   mounted() {
-    gsap.to('.title', {
-      // x: 300,
+    let conte = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#home',
+        start: 'bottom 80%',
+        end: 'top 10%',
+        markers: false,
+        scrub: 1,
+      },
+    })
+
+    conte.to('.conte', {
+      y: -100,
     })
   },
 }
@@ -81,12 +91,13 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-.content {
-  margin-top: -100px;
-}
 .star {
   animation: levitate 5s ease-out 1s infinite;
 }
+.conte {
+  transform: translateY(50px);
+}
+
 @keyframes levitate {
   0% {
     transform: translate(0%, 0%);
