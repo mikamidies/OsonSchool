@@ -37,6 +37,9 @@
                 <a-menu-item key="2">
                   <NuxtLink :to="switchLocalePath('ru')">Russian</NuxtLink>
                 </a-menu-item>
+                <a-menu-item key="3">
+                  <NuxtLink :to="switchLocalePath('uz')">Uzbek</NuxtLink>
+                </a-menu-item>
               </a-menu>
               <a-button style="margin-left: 8px">
                 <div v-if="$i18n.locale === 'en'" class="locale">
@@ -44,6 +47,9 @@
                 </div>
                 <div v-if="$i18n.locale === 'ru'" class="locale">
                   <img src="@/assets/img/ru.svg" alt="" /> Ru
+                </div>
+                <div v-if="$i18n.locale === 'uz'" class="locale">
+                  <img src="@/assets/img/uz.svg" alt="" /> Uzb
                 </div>
                 <a-icon type="down" />
               </a-button>
@@ -104,6 +110,14 @@
             class="language"
           >
             <img src="@/assets/img/ru.svg" alt="" /> Ru
+          </NuxtLink>
+          <NuxtLink
+            :to="switchLocalePath('uz')"
+            @click="scrollElement('home')"
+            :class="{ active: $i18n.locale === 'uz' }"
+            class="language"
+          >
+            <img src="@/assets/img/uz.svg" alt="" /> Uzb
           </NuxtLink>
         </div>
         <div class="right">
