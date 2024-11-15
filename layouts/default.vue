@@ -2,6 +2,8 @@
   <div class="site">
     <TheHeader />
 
+    <Modal />
+
     <nuxt />
 
     <TheFooter />

@@ -102,7 +102,7 @@ export default {
   gap: 16px;
 }
 .name {
-  max-width: 200px;
+  max-width: 300px;
   color: #fff;
   text-align: center;
   font-family: var(--decor);
