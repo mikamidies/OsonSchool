@@ -1,0 +1,321 @@
+@font-face {
+  font-family: 'Sansa';
+  src: url('../fonts/Sansation_Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Gilroy-Rg';
+  src: url('../fonts/Gilroy-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Gilroy-Md';
+  src: url('../fonts/Gilroy-Medium.woff');
+}
+
+@font-face {
+  font-family: 'Gilroy-Bd';
+  src: url('../fonts/Gilroy-Bold.woff');
+}
+
+:root {
+  --decor: 'Sansa';
+  --regular: 'Gilroy-Rg';
+  --medium: 'Gilroy-Md';
+  --bold: 'Gilroy-Bd';
+
+  --black: #0e0e0e;
+  --blue: #000153;
+  --sky: #0080fe;
+  --violet: #390053;
+  --magenta: #8700fe;
+  --bloody: #53003c;
+  --pink: #ce1099;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  background: var(--black);
+  font-family: var(--regular);
+  color: white !important;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.container.big {
+  max-width: 1373px;
+}
+.ant-btn {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent;
+  color: #a4a4a4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0 !important;
+
+  color: #a4a4a4;
+  font-size: 20px;
+  font-weight: 400;
+}
+.ant-btn img {
+  width: 28px;
+}
+.ant-btn i {
+  margin: 0 !important;
+}
+.ant-btn:active,
+.ant-btn:focus,
+.ant-btn:hover {
+  background: transparent !important;
+  color: #a4a4a4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+  color: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ce1099;
+  border-radius: 2px;
+}
+
+.belt {
+  margin-bottom: 64px;
+}
+.title {
+  font-size: 85px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: var(--bold);
+}
+.ant-dropdown-menu-item,
+.ant-dropdown-menu-submenu-title,
+.ant-dropdown-menu-item a {
+  color: var(--black) !important;
+  cursor: pointer !important;
+}
+.wrap {
+  position: relative;
+}
+.anchor {
+  position: absolute;
+  top: -140px;
+  left: 0;
+}
+.anchor.upper {
+  top: 0px;
+}
+.ant-dropdown {
+  cursor: pointer !important;
+}
+.ant-btn .locale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 1440px) {
+  .container.big {
+    max-width: 1320px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+  .belt .title {
+    font-size: 25px;
+  }
+  .belt {
+    padding: 12px 0;
+    margin-bottom: 32px;
+  }
+}
+html {
+  cursor: url(../img/logo/cursor-1.png) 10 20, auto;
+}
+a:hover,
+button:hover, .hoverable:hover {
+  cursor: url(../img/logo/cursor-2.png) 10 20, auto;
+}
+.ring {
+  width: 600px;
+  height: 500px;
+}
+.ring path {
+  transition: 0.3s;
+}
+.ring.purple path {
+  fill: var(--magenta) !important;
+}
+.ring.blue path {
+  fill: var(--sky) !important;
+}
