@@ -16,7 +16,12 @@
       data-aos-duration="1200"
     >
       <div class="swiper-wrapper">
-        <div class="swiper-slide hoverable" v-for="item in teachers" :key="item.id" @click="openModal(item.title, item?.text)">
+        <div
+          class="swiper-slide hoverable"
+          v-for="item in teachers"
+          :key="item.id"
+          @click="openModal(item.title, item?.text)"
+        >
           <div class="star">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,12 +107,12 @@ export default {
   },
   methods: {
     openModal(title, text) {
-      this.$store.commit("modal/openModal", {
+      this.$store.commit('modal/openModal', {
         title: title,
-        content: text
-      });
-    }
-  }
+        content: text,
+      })
+    },
+  },
 }
 </script>
 

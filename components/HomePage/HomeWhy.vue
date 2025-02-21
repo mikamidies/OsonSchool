@@ -27,15 +27,35 @@
 
       <div class="swiper" ref="whySwiper">
         <div class="swiper-wrapper">
-          <div v-for="item in why" :key="item.id" class="swiper-slide">
+          <div
+            v-for="(item, index) in processedItems"
+            :key="item.id"
+            class="swiper-slide"
+          >
             <div class="img">
               <img :src="item.image" alt="" />
             </div>
             <div class="content">
               <p class="name">{{ item.title }}</p>
-              <p class="sub">
+              <p
+                class="sub"
+                :class="{ show: item.isExpanded }"
+                :ref="`subtitle-${index}`"
+              >
                 {{ item.subtitle }}
               </p>
+
+              <button
+                class="more"
+                v-if="item.showButton"
+                @click="toggleText(index)"
+              >
+                {{
+                  item.isExpanded
+                    ? $store.state.translations['main.hideAll']
+                    : $store.state.translations['main.showAll']
+                }}
+              </button>
             </div>
           </div>
         </div>
@@ -64,9 +84,19 @@ import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
-  props: ['why'],
+  props: {
+    why: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      processedItems: [],
+    }
+  },
 
-  mounted() {
+  async mounted() {
     new Swiper(this.$refs.whySwiper, {
       slidesPerView: 1.2,
       spaceBetween: 16,
@@ -86,6 +116,26 @@ export default {
         },
       },
     })
+
+    this.processedItems = this.why.map((item) => ({
+      ...item,
+      isExpanded: false,
+      showButton: false,
+    }))
+
+    this.$nextTick(() => {
+      this.processedItems.forEach((item, index) => {
+        const element = this.$refs[`subtitle-${index}`][0]
+        item.showButton = element.scrollHeight > element.clientHeight
+      })
+    })
+  },
+
+  methods: {
+    toggleText(index) {
+      this.processedItems[index].isExpanded =
+        !this.processedItems[index].isExpanded
+    },
   },
 }
 </script>
@@ -112,7 +162,7 @@ export default {
 .name {
   color: #fff;
   font-family: var(--bold);
-  font-size: 35px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -129,10 +179,19 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub.show {
+  -webkit-line-clamp: initial;
 }
 .swiper {
-  max-width: 1075px;
-  min-width: 1075px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: 0 auto;
   border-radius: 40px;
 }
@@ -155,6 +214,11 @@ export default {
 .prev:hover,
 .next:hover {
   cursor: url(@/assets/img/logo/cursor-2.png) 10 20, auto;
+}
+.more {
+  margin-top: 16px;
+  font-size: 24px;
+  color: var(--sky);
 }
 @media screen and (max-width: 1024px) {
   .swiper {

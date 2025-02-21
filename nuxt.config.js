@@ -26,7 +26,7 @@ export default {
   modules: ['@nuxtjs/axios', '@nuxtjs/i18n', 'nuxt-gsap-module'],
 
   axios: {
-    baseURL: process.env.BASE_URL || 'https://apioson.pythonanywhere.com/api',
+    baseURL: 'https://admin.osonschool.com/api',
   },
 
   build: {
