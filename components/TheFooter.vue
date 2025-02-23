@@ -9,23 +9,22 @@
     />
 
     <div class="socials">
-      <a :href="`${$store.state.translations['links.telegram']']}`"
+      <a :href="$store.state.translations['links.telegram']"
          target="_blank" class="soc">
         <img src="@/assets/img/logo/soc-1.png" alt="" />
       </a>
-      <a :href="`${$store.state.translations['links.youtube']']}`"
+      <a :href="$store.state.translations['links.youtube']"
         target="_blank" class="soc">
         <img src="@/assets/img/logo/soc-2.png" alt="" />
       </a>
-      <a :href="`${$store.state.translations['links.instagram']']}`"
+      <a :href="$store.state.translations['links.instagram']"
         target="_blank"
         class="soc"
       >
         <img src="@/assets/img/logo/soc-3.png" alt="" />
       </a>
 
-      <a
-        :href="`${$store.state.translations['links.linkedin']']}`"
+      <a :href="$store.state.translations['links.linkedin']"
         target="_blank"
         class="soc"
       >
