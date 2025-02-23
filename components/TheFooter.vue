@@ -17,8 +17,7 @@
         target="_blank" class="soc">
         <img src="@/assets/img/logo/soc-2.png" alt="" />
       </a>
-      <a
-        :href="`${$store.state.translations['links.instagram']']}`"
+      <a :href="`${$store.state.translations['links.instagram']']}`"
         target="_blank"
         class="soc"
       >
