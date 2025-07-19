@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'Oson School',
+    title: 'SAT UP',
     htmlAttrs: {
       lang: 'en',
     },
@@ -44,10 +44,10 @@ export default {
   },
 
   i18n: {
-    locales: ['en', 'ru', 'uz'],
-    defaultLocale: 'ru',
+    locales: ['en'],
+    defaultLocale: 'en',
     vueI18n: {
-      fallbackLocale: 'ru',
+      fallbackLocale: 'en',
     },
   },
 }

@@ -3,12 +3,12 @@
     <div class="wrap">
       <div class="anchor" id="about"></div>
       <div class="container">
-        <div class="card" data-aos="fade-up" data-aos-duration="1200">
+        <div class="card">
           <img src="@/assets/img/rect.png" alt="" class="cover" />
           <p class="text">
             {{ $store.state.translations['main.saturn'] }}
           </p>
-          <img src="@/assets/img/saturn.png" alt="" class="img" />
+          <!-- <img src="@/assets/img/saturn.png" alt="" class="img" /> -->
         </div>
       </div>
     </div>
@@ -21,14 +21,13 @@ export default {}
 
 <style scoped>
 .wrapper {
-  padding: 40px 0 200px 0;
+  padding: 40px 0 120px 0;
   overflow: hidden;
 }
 .card {
   position: relative;
-  min-height: 388px;
   display: flex;
-  padding: 40px 72px;
+  padding: 40px 72px 80px 72px;
 }
 .card::before {
   width: 100%;
@@ -96,7 +95,7 @@ export default {}
     padding-bottom: 0;
   }
   .wrap {
-    padding: 32px 0 120px 0;
+    padding: 32px 0 40px 0;
     overflow: hidden;
   }
   .text {
@@ -104,9 +103,9 @@ export default {}
     max-width: 100%;
   }
   .card {
-    min-height: 288px;
     padding: 24px;
-  } 
+    padding-bottom: 40px;
+  }
   .cover {
     border-radius: 32px;
   }
@@ -127,7 +126,7 @@ export default {}
     top: 90%;
     width: 200px;
   }
-  .wrapper{
+  .wrapper {
     padding-top: 0;
     margin-top: -80px;
   }

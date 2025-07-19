@@ -110,7 +110,19 @@ export default {
       },
       speed: 1000,
       breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 1.2,
+          spaceBetween: 16,
+        },
         1024: {
+          slidesPerView: 1.5,
+          spaceBetween: 24,
+        },
+        1200: {
           slidesPerView: 2,
           spaceBetween: 32,
         },
@@ -220,6 +232,25 @@ export default {
   font-size: 24px;
   color: var(--sky);
 }
+@media screen and (max-width: 1200px) {
+  .swiper {
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 16px;
+  }
+  .next {
+    position: absolute;
+    bottom: -64px;
+    left: 60%;
+    transform: translateX(-50%);
+  }
+  .prev {
+    position: absolute;
+    bottom: -64px;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+}
 @media screen and (max-width: 1024px) {
   .swiper {
     max-width: 100%;
@@ -240,18 +271,6 @@ export default {
   }
   .sub {
     font-size: 16px;
-  }
-  .next {
-    position: absolute;
-    bottom: -64px;
-    left: 60%;
-    transform: translateX(-50%);
-  }
-  .prev {
-    position: absolute;
-    bottom: -64px;
-    left: 40%;
-    transform: translateX(-50%);
   }
 }
 </style>

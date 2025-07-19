@@ -12,7 +12,7 @@
 
     <div class="container big" data-aos="fade-up" data-aos-duration="1200">
       <div class="card">
-        <div class="top">
+        <!-- <div class="top">
           <div class="stars">
             <div
               class="star__first star"
@@ -96,10 +96,10 @@
               {{ pricing[2].title }}
             </button>
           </div>
-        </div>
+        </div> -->
 
         <div class="mid">
-          <div class="planets">
+          <!-- <div class="planets">
             <div class="violet planet" :class="{ active: handleOne == true }">
               <img src="@/assets/img/tab-1.png" alt="" />
               <img src="@/assets/img/tab-1.png" alt="" />
@@ -115,19 +115,21 @@
               <img src="@/assets/img/tab-3.png" alt="" />
               <img src="@/assets/img/tab-3.png" alt="" />
             </div>
-          </div>
+          </div> -->
 
           <div class="content one" :class="{ active: handleOne == true }">
             <div class="item" v-for="item in pricing[0].tarifs" :key="item.id">
               <h4 class="name" v-if="item.type == 0">Group</h4>
-              <h4 class="name" v-if="item.type == 1">Individual</h4>
+              <h4 class="name" v-if="item.type == 1">
+                {{ $store.state.translations['main.subscription'] }}
+              </h4>
               <div class="list" v-html="item.desc"></div>
               <p class="price">Price: {{ item.price }}</p>
             </div>
             <div class="stick" v-if="pricing[0].tarifs.length > 1"></div>
           </div>
 
-          <div class="content two" :class="{ active: handleTwo == true }">
+          <!-- <div class="content two" :class="{ active: handleTwo == true }">
             <div class="item" v-for="item in pricing[1].tarifs" :key="item.id">
               <h4 class="name" v-if="item.type == 0">Group</h4>
               <h4 class="name" v-if="item.type == 1">Individual</h4>
@@ -145,7 +147,7 @@
               <p class="price">Price: {{ item.price }}</p>
             </div>
             <div class="stick" v-if="pricing[2].tarifs.length > 1"></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -183,6 +185,8 @@ export default {
   border-radius: 89px;
   border: 3px solid #fff;
   padding: 48px 64px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .top {
   display: grid;
@@ -236,9 +240,7 @@ export default {
   border-color: var(--magenta);
 }
 .mid {
-  display: grid;
-  grid-template-columns: 136px 1fr;
-  gap: 65px;
+  display: flex;
 }
 .planets {
   border-radius: 58px;
@@ -264,19 +266,19 @@ export default {
   border-radius: 50%;
 }
 .content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 108px;
+  display: flex;
   display: none;
   position: relative;
+  width: 100%;
 }
 .content.active {
-  display: grid;
+  display: flex;
 }
 .stick {
   position: absolute;
 }
 .item {
+  width: 100%;
   border-radius: 60px;
   padding: 0 24px 32px 24px;
   border: 2px dashed var(--magenta);

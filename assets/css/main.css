@@ -286,6 +286,9 @@ input[type='number'] {
   .container.big {
     max-width: 1320px;
   }
+  .container {
+    padding: 0 16px !important;
+  }
 }
 @media screen and (max-width: 1024px) {
   .container {
@@ -299,13 +302,7 @@ input[type='number'] {
     margin-bottom: 32px;
   }
 }
-html {
-  cursor: url(../img/logo/cursor-1.png) 10 20, auto;
-}
-a:hover,
-button:hover, .hoverable:hover {
-  cursor: url(../img/logo/cursor-2.png) 10 20, auto;
-}
+
 .ring {
   width: 600px;
   height: 500px;

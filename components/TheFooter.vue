@@ -9,22 +9,30 @@
     />
 
     <div class="socials">
-      <a :href="$store.state.translations['links.telegram']"
-         target="_blank" class="soc">
+      <a
+        :href="$store.state.translations['links.telegram']"
+        target="_blank"
+        class="soc"
+      >
         <img src="@/assets/img/logo/soc-1.png" alt="" />
       </a>
-      <a :href="$store.state.translations['links.youtube']"
-        target="_blank" class="soc">
+      <a
+        :href="$store.state.translations['links.youtube']"
+        target="_blank"
+        class="soc"
+      >
         <img src="@/assets/img/logo/soc-2.png" alt="" />
       </a>
-      <a :href="$store.state.translations['links.instagram']"
+      <a
+        :href="$store.state.translations['links.instagram']"
         target="_blank"
         class="soc"
       >
         <img src="@/assets/img/logo/soc-3.png" alt="" />
       </a>
 
-      <a :href="$store.state.translations['links.linkedin']"
+      <a
+        :href="$store.state.translations['links.linkedin']"
         target="_blank"
         class="soc"
       >
@@ -41,7 +49,7 @@
         </div>
 
         <div class="mid">
-          <img src="@/assets/img/logo/brand-flat.svg" alt="" />
+          <img width="132" src="@/assets/img/logo/brand.png" alt="" />
         </div>
 
         <div class="right">
@@ -130,8 +138,11 @@ export default {}
 @media screen and (max-width: 1024px) {
   .foot .container {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     flex-direction: column;
+  }
+  .planet {
+    height: 50%;
   }
   .soc img {
     width: 64px;
@@ -141,6 +152,14 @@ export default {}
   }
   .wrap {
     padding-top: 64px;
+  }
+  .mid img {
+    width: 100px;
+  }
+  .left a,
+  .right a {
+    font-size: 20px;
+    font-weight: 500;
   }
 }
 </style>

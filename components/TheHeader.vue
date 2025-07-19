@@ -3,7 +3,7 @@
     <div class="container">
       <div class="left">
         <button @click="scrollElement('home')">
-          <img src="@/assets/img/logo/brand.svg" alt="" />
+          <img width="100" src="@/assets/img/logo/brand.png" alt="" />
         </button>
       </div>
       <div class="mid">
@@ -13,11 +13,11 @@
               {{ $store.state.translations['main.about'] }}
             </button>
           </li>
-          <li>
+          <!-- <li>
             <button @click="scrollElement('teachers')">
               {{ $store.state.translations['main.teachers'] }}
             </button>
-          </li>
+          </li> -->
           <li>
             <button @click="scrollElement('pricing')">
               {{ $store.state.translations['main.pricing'] }}
@@ -28,33 +28,21 @@
               {{ $store.state.translations['main.reviews'] }}
             </button>
           </li>
-          <li class="onatili">
+          <!-- <li class="onatili">
             <a-dropdown>
               <a-menu slot="overlay">
                 <a-menu-item key="1">
                   <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
-                </a-menu-item>
-                <a-menu-item key="2">
-                  <NuxtLink :to="switchLocalePath('ru')">Russian</NuxtLink>
-                </a-menu-item>
-                <a-menu-item key="3">
-                  <NuxtLink :to="switchLocalePath('uz')">Uzbek</NuxtLink>
                 </a-menu-item>
               </a-menu>
               <a-button style="margin-left: 8px">
                 <div v-if="$i18n.locale === 'en'" class="locale">
                   <img src="@/assets/img/gb.svg" alt="" /> Eng
                 </div>
-                <div v-if="$i18n.locale === 'ru'" class="locale">
-                  <img src="@/assets/img/ru.svg" alt="" /> Ru
-                </div>
-                <div v-if="$i18n.locale === 'uz'" class="locale">
-                  <img src="@/assets/img/uz.svg" alt="" /> Uzb
-                </div>
                 <a-icon type="down" />
               </a-button>
             </a-dropdown>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="right">
@@ -192,7 +180,7 @@ export default {
 .links {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
 }
 .links button {
   font-size: 20px;
@@ -252,7 +240,7 @@ export default {
     display: none;
   }
   .left img {
-    width: 100px;
+    width: 72px;
   }
   .wrap {
     padding: 24px 0;

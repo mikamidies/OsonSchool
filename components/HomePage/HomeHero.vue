@@ -110,6 +110,19 @@ export default {
   }
 }
 @media screen and (max-width: 1200px) {
+  .title {
+    font-size: 64px;
+    line-height: 120%;
+  }
+  .conte {
+    grid-template-columns: 1fr 1fr;
+  }
+  .right img {
+    width: 100%;
+    transform: translate(-20px, -20px);
+  }
+}
+@media screen and (max-width: 800px) {
   .wrap {
     height: 90vh;
   }
@@ -133,10 +146,10 @@ export default {
     margin-bottom: 16px;
   }
   .left {
-    height: 65%;
+    height: 50%;
   }
   .right {
-    height: 28%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,7 +169,7 @@ export default {
     }
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 700px) {
   .wrap {
     height: 100vh;
   }

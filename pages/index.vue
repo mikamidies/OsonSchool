@@ -4,9 +4,9 @@
     <HomeSaturn />
     <HomeCover />
     <HomeWhy :why="why" />
-    <HomeTeachers :teachers="teachers" />
+    <!-- <HomeTeachers :teachers="teachers" /> -->
     <HomePrices :pricing="pricing" />
-    <HomeBonuses />
+    <!-- <HomeBonuses /> -->
     <HomeReviews :reviews="reviews" />
     <HomeFAQ :faq="faq" />
     <HomeForm />

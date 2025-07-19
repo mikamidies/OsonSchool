@@ -2,7 +2,7 @@
   <div class="dark">
     <transition name="home">
       <div v-if="loading" class="loading">
-        <img class="pic" src="@/assets/img/logo/starboy.svg" alt="" />
+        <img class="pic" src="@/assets/img/logo/brand.png" alt="" />
       </div>
     </transition>
   </div>
@@ -78,7 +78,7 @@ export default {
   background: var(--black);
 }
 .pic {
-  width: 64px;
+  width: 120px;
   animation: 2.5s rotate infinite;
   animation-timing-function: linear;
   transform-origin: center center;
@@ -87,13 +87,21 @@ export default {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+@media screen and (max-width: 1024px) {
+  .pic {
+    width: 80px;
+  }
+}
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
 }
 </style>
